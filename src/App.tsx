@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
