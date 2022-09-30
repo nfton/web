@@ -22,7 +22,8 @@ function App() {
 					{	/* @ts-ignore */}
 					Theme: {window.Telegram.WebApp.colorScheme}
 				</p>
-				<Button component={Link} color="primary" to="/main">To Main</Button>
+				<Button component={Link} color="primary" variant="contained" to="/main">To Main</Button>
+				<Button component={Link} color="secondary" variant="contained" to="/main">To Main</Button>
 				{	/* @ts-ignore */}
 				<code>{JSON.stringify(window.Telegram.WebApp.initData)}</code>
 			</header>
