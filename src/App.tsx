@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import useWindowDimensions from "./hooks/useWindowDimensions";
+import {Button} from '@mui/material';
 
 function App() {
 	const {height, width} = useWindowDimensions();
@@ -20,6 +21,7 @@ function App() {
 					{	/* @ts-ignore */}
 					Theme: {window.Telegram.WebApp.colorScheme}
 				</p>
+				<Button variant="contained">Hello World</Button>
 			</header>
 		</div>
 	);
