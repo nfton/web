@@ -2,28 +2,26 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { combineReducers } from '@reduxjs/toolkit'
-import { playerReducer, playerInitialState } from './player'
+import { EPlayerActionTypes, EPlayerStateTypes, IPlayerState, TPlayerActions } from '../../types'
 
 //----------------------------------------------------------------------------------------------------------------------
-// Root Reducer
+// Player Initial State
 //----------------------------------------------------------------------------------------------------------------------
 
-const rootReducer = combineReducers({
-	player: playerReducer,
-})
 
-//----------------------------------------------------------------------------------------------------------------------
-// Preloaded Root State
-//----------------------------------------------------------------------------------------------------------------------
-
-export const preloadedRootState = {
-	player: playerInitialState
+export const playerInitialState: IPlayerState = {
+	[EPlayerStateTypes.LEVEL]: 0
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Exports
+// Player Reducer
 //----------------------------------------------------------------------------------------------------------------------
 
-export type TRootState = ReturnType<typeof rootReducer>
-export default rootReducer
+export const playerReducer = (state = playerInitialState, action: TPlayerActions) => {
+	switch ( action.type ) {
+		case [EPlayerActionTypes.SET_LEVEL]:
+			return { ...state, [EPlayerStateTypes.LEVEL]: action.payload }
+		default:
+			return state
+	}
+}
