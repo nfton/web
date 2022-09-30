@@ -8,7 +8,6 @@ import { EPlayerActionTypes, EPlayerStateTypes, IPlayerState, TPlayerActions } f
 // Player Initial State
 //----------------------------------------------------------------------------------------------------------------------
 
-
 export const playerInitialState: IPlayerState = {
 	[EPlayerStateTypes.LEVEL]: 0
 }
@@ -19,7 +18,7 @@ export const playerInitialState: IPlayerState = {
 
 export const playerReducer = (state = playerInitialState, action: TPlayerActions) => {
 	switch ( action.type ) {
-		case [EPlayerActionTypes.SET_LEVEL]:
+		case EPlayerActionTypes.SET_LEVEL:
 			return { ...state, [EPlayerStateTypes.LEVEL]: action.payload }
 		default:
 			return state

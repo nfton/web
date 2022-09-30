@@ -10,6 +10,7 @@ import { ECoin } from '../default'
 
 export enum ECoinsActionTypes {
 	SET_CURRENT_COIN = 'COINS.SET_CURRENT_COIN',
+	SWITCH_CURRENT_COIN = 'COINS.SWITCH_CURRENT_COIN',
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -17,12 +18,16 @@ export enum ECoinsActionTypes {
 //----------------------------------------------------------------------------------------------------------------------
 
 interface ICoinsSetCurrentCoinAction {
-	type: [ECoinsActionTypes.SET_CURRENT_COIN],
+	type: ECoinsActionTypes.SET_CURRENT_COIN,
 	payload: ECoin
+}
+
+interface ICoinsSwitchCurrentCoinAction {
+	type: ECoinsActionTypes.SWITCH_CURRENT_COIN
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 // Coins Actions Types
 //----------------------------------------------------------------------------------------------------------------------
 
-export type TCoinsActions = ICoinsSetCurrentCoinAction
+export type TCoinsActions = ICoinsSetCurrentCoinAction | ICoinsSwitchCurrentCoinAction

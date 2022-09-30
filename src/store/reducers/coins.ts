@@ -2,8 +2,7 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { ECoin, ECoinsStateTypes, ICoinsState } from '../../types'
-import { ECoinsActionTypes, TCoinsActions } from '../../types/action_creators/coins'
+import { ECoin, ECoinsActionTypes, ECoinsStateTypes, ICoinsState, TCoinsActions } from '../../types'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Coins Initial State
@@ -21,8 +20,10 @@ export const coinsInitialState: ICoinsState = {
 
 export const coinsReducer = (state = coinsInitialState, action: TCoinsActions) => {
 	switch ( action.type ) {
-		case [ECoinsActionTypes.SET_CURRENT_COIN]:
+		case ECoinsActionTypes.SET_CURRENT_COIN:
 			return { ...state, [ECoinsStateTypes.CURRENT_COIN]: action.payload }
+		case ECoinsActionTypes.SWITCH_CURRENT_COIN:
+			return { ...state, [ECoinsStateTypes.CURRENT_COIN]: state[ECoinsStateTypes.CURRENT_COIN] === ECoin.GAME ? ECoin.TON : ECoin.GAME }
 		default:
 			return state
 	}

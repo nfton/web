@@ -11,7 +11,7 @@ export enum EPlayerActionTypes {
 //----------------------------------------------------------------------------------------------------------------------
 
 interface IPlayerSetLevelAction {
-	type: [EPlayerActionTypes.SET_LEVEL],
+	type: EPlayerActionTypes.SET_LEVEL,
 	payload: number
 }
 
