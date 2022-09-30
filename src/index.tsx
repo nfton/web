@@ -9,13 +9,19 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import router from "./router";
 import {RouterProvider} from "react-router-dom";
+import {ThemeProvider} from "@mui/material";
+import { darkTheme, lightTheme } from './themes';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
+// @ts-ignore
+let theme = window.Telegram.WebApp.colorScheme === 'dark' ? darkTheme : lightTheme
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router}/>
+		<ThemeProvider theme={theme}>
+			<RouterProvider router={router}/>
+		</ThemeProvider>
 	</React.StrictMode>
 );
 
