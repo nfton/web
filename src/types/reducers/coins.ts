@@ -2,31 +2,24 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { combineReducers } from '@reduxjs/toolkit'
-import { coinsReducer, coinsInitialState } from './coins'
-import { playerReducer, playerInitialState } from './player'
+import { ECoin } from '../default'
 
 //----------------------------------------------------------------------------------------------------------------------
-// Root Reducer
+// Coins Reducer State Types Enum
 //----------------------------------------------------------------------------------------------------------------------
 
-const rootReducer = combineReducers({
-	coins: coinsReducer,
-	player: playerReducer,
-})
-
-//----------------------------------------------------------------------------------------------------------------------
-// Preloaded Root State
-//----------------------------------------------------------------------------------------------------------------------
-
-export const preloadedRootState = {
-	coins: coinsInitialState,
-	player: playerInitialState
+export enum ECoinsStateTypes {
+	CURRENT_COIN = 'currentCoin',
+	GAME_AMOUNT = 'gameAmount',
+	TON_AMOUNT = 'tonAmount',
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Exports
+// Coins Reducer State Interface
 //----------------------------------------------------------------------------------------------------------------------
 
-export type TRootState = ReturnType<typeof rootReducer>
-export default rootReducer
+export interface ICoinsState {
+	[ECoinsStateTypes.CURRENT_COIN]: ECoin,
+	[ECoinsStateTypes.GAME_AMOUNT]: number,
+	[ECoinsStateTypes.TON_AMOUNT]: number,
+}
