@@ -23,13 +23,13 @@ export const Header: React.FC = () => {
 
 	return (
 		<AppBar className="header" position="static" id={ nextId('header-') }>
-			<Toolbar className="header__tools">
+			<Toolbar className="header-tools">
 				<div>TODO</div>
-				<div className="header__tools__balance">
-					<span className="header__tools__balance__amount">{ currentCoin === ECoin.TON ? tonAmount.toFixed(2) : gameAmount }</span>
+				<div className="balance">
+					<span className="amount">{ currentCoin === ECoin.TON ? tonAmount.toFixed(2) : gameAmount }</span>
 					<IconButton
 						id={ nextId('header-') }
-						className="header__tools__balance__coin"
+						className="coin"
 						aria-label="delete"
 						color="default"
 						onClick={ switchCurrentCoin }

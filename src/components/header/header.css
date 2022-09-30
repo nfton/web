@@ -1,21 +1,18 @@
-.header__tools {
+.header-tools {
   display: flex;
   justify-content: space-between;
 }
-
-.header__tools__balance {
+.header-tools .balance {
   display: flex;
   align-items: center;
   margin-right: -8px;
 }
-
-.header__tools__balance__amount {
+.header-tools .balance .amount {
   font-size: 24px;
   font-weight: 700;
   line-height: 44px;
 }
-
-.header__tools__balance__coin .icon {
+.header-tools .balance .coin .icon {
   width: 28px;
   height: 28px;
 }
