@@ -11,7 +11,7 @@ import { AppBar, Toolbar, LinearProgress } from '@mui/material'
 
 export const Header: React.FC = () => {
 	return (
-		<AppBar position="static">
+		<AppBar position="static" elevation={0}>
 			<Toolbar>
 				<LinearProgress variant="determinate" value={ 0 } />
 			Hello
