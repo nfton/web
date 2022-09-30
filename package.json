@@ -5,10 +5,18 @@
   "author": "Jakhongir <tashpulatov.jakhongir@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.7",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@types/redux-logger": "^3.0.9",
+    "redux-logger": "^3.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
@@ -40,10 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@reduxjs/toolkit": "^1.8.5",
-    "@types/redux-logger": "^3.0.9",
-    "redux-logger": "^3.0.6"
   }
 }
