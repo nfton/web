@@ -1,38 +1,22 @@
 //----------------------------------------------------------------------------------------------------------------------
-// Imports
+// Player Action Types Enum
 //----------------------------------------------------------------------------------------------------------------------
 
-import { lazy } from 'react'
-import {createMemoryRouter} from "react-router-dom"
-import App from "../App"
+export enum EPlayerActionTypes {
+	SET_LEVEL = 'PLAYER.SET_LEVEL',
+}
 
 //----------------------------------------------------------------------------------------------------------------------
-// Pages
+// Player Action Interfaces
 //----------------------------------------------------------------------------------------------------------------------
 
-const MainLazyPage = lazy(() => import('../pages/Main'))
+interface IPlayerSetLevelAction {
+	type: [EPlayerActionTypes.SET_LEVEL],
+	payload: number
+}
 
 //----------------------------------------------------------------------------------------------------------------------
-// Router
+// Player Actions Types
 //----------------------------------------------------------------------------------------------------------------------
 
-const router = createMemoryRouter([
-	{
-		path: "/",
-		element: <MainLazyPage/>,
-	},{
-		path: "/main",
-		element: <MainLazyPage/>,
-		id: 'main'
-	},{
-		path: "/app",
-		element: <App/>,
-		id: 'app'
-	},
-]);
-
-//----------------------------------------------------------------------------------------------------------------------
-// Exports
-//----------------------------------------------------------------------------------------------------------------------
-
-export default router
+export type TPlayerActions = IPlayerSetLevelAction

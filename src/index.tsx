@@ -1,16 +1,32 @@
+//----------------------------------------------------------------------------------------------------------------------
+// Imports
+//----------------------------------------------------------------------------------------------------------------------
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
-import App from './App';
+import { Provider } from 'react-redux'
+import {RouterProvider} from "react-router-dom";
+import {ThemeProvider} from "@mui/material";
+import router from "./router";
 import reportWebVitals from './reportWebVitals';
+import store from './store'
+import { darkTheme, lightTheme } from './themes';
+import { Header } from './components'
+
+import './index.scss';
+
+//----------------------------------------------------------------------------------------------------------------------
+// Fonts
+//----------------------------------------------------------------------------------------------------------------------
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import router from "./router";
-import {RouterProvider} from "react-router-dom";
-import {ThemeProvider} from "@mui/material";
-import { darkTheme, lightTheme } from './themes';
+
+//----------------------------------------------------------------------------------------------------------------------
+// Root Element
+//----------------------------------------------------------------------------------------------------------------------
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -19,9 +35,12 @@ const root = ReactDOM.createRoot(
 let theme = window.Telegram.WebApp.colorScheme === 'dark' ? darkTheme : lightTheme
 root.render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<RouterProvider router={router}/>
-		</ThemeProvider>
+		<Provider store={ store }>
+			<ThemeProvider theme={theme}>
+			<Header />
+			</ThemeProvider>
+			<RouterProvider router={ router } />
+		</Provider>
 	</React.StrictMode>
 );
 

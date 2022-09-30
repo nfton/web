@@ -2,31 +2,27 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { combineReducers } from '@reduxjs/toolkit'
-import { coinsReducer, coinsInitialState } from './coins'
-import { playerReducer, playerInitialState } from './player'
+import { ECoin } from '../default'
 
 //----------------------------------------------------------------------------------------------------------------------
-// Root Reducer
+// Coins Action Types Enum
 //----------------------------------------------------------------------------------------------------------------------
 
-const rootReducer = combineReducers({
-	coins: coinsReducer,
-	player: playerReducer,
-})
-
-//----------------------------------------------------------------------------------------------------------------------
-// Preloaded Root State
-//----------------------------------------------------------------------------------------------------------------------
-
-export const preloadedRootState = {
-	coins: coinsInitialState,
-	player: playerInitialState
+export enum ECoinsActionTypes {
+	SET_CURRENT_COIN = 'COINS.SET_CURRENT_COIN',
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Exports
+// Coins Action Interfaces
 //----------------------------------------------------------------------------------------------------------------------
 
-export type TRootState = ReturnType<typeof rootReducer>
-export default rootReducer
+interface ICoinsSetCurrentCoinAction {
+	type: [ECoinsActionTypes.SET_CURRENT_COIN],
+	payload: ECoin
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Coins Actions Types
+//----------------------------------------------------------------------------------------------------------------------
+
+export type TCoinsActions = ICoinsSetCurrentCoinAction
