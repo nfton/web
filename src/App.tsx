@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import useWindowDimensions from "./hooks/useWindowDimensions";
-import {Button} from '@mui/material';
+import {Button} from "@mui/material";
+import {Link} from "react-router-dom";
 
 function App() {
 	const {height, width} = useWindowDimensions();
@@ -21,7 +22,9 @@ function App() {
 					{	/* @ts-ignore */}
 					Theme: {window.Telegram.WebApp.colorScheme}
 				</p>
-				<Button variant="contained">Hello World</Button>
+				<Button component={Link} color="primary" to="/main">To Main</Button>
+				{	/* @ts-ignore */}
+				<code>{JSON.stringify(window.Telegram.WebApp.initData)}</code>
 			</header>
 		</div>
 	);
