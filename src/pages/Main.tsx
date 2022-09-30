@@ -2,12 +2,7 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 
-useEffect(() => {
-	// @ts-ignore
-	window.Telegram.WebApp.ready()
-	// @ts-ignore
-	window.Telegram.WebApp.HapticFeedback.impactOccurred('heavy')
-}, [])
+
 const error = () => {
 	// @ts-ignore
 	window.Telegram.WebApp.HapticFeedback.notificationOccurred('error')
@@ -25,6 +20,12 @@ const changed = () => {
 	window.Telegram.WebApp.HapticFeedback.selectionChanged()
 }
 const MainPage = () => {
+	useEffect(() => {
+		// @ts-ignore
+		window.Telegram.WebApp.ready()
+		// @ts-ignore
+		window.Telegram.WebApp.HapticFeedback.impactOccurred('heavy')
+	}, [])
 	return (<div>
 		<Button component={Link} variant="contained" color="primary" to="/app">To App</Button>
 		<Button variant="contained" color="secondary" onClick={error}>ERROR</Button>
