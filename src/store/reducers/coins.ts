@@ -10,8 +10,8 @@ import { ECoin, ECoinsActionTypes, ECoinsStateTypes, ICoinsState, TCoinsActions 
 
 export const coinsInitialState: ICoinsState = {
 	[ECoinsStateTypes.CURRENT_COIN]: ECoin.GAME,
-	[ECoinsStateTypes.GAME_AMOUNT]: 0,
-	[ECoinsStateTypes.TON_AMOUNT]: 0,
+	[ECoinsStateTypes.GAME_AMOUNT]: 1540,
+	[ECoinsStateTypes.TON_AMOUNT]: 1,
 }
 
 //----------------------------------------------------------------------------------------------------------------------
