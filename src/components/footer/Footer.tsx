@@ -6,6 +6,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import GroupsIcon from '@mui/icons-material/Groups';
 import {useLocation} from "react-router-dom";
+import "./footer.scss"
 
 export const Footer: React.FC = () => {
 	let location = useLocation();
