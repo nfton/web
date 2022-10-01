@@ -4,14 +4,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux'
-import {RouterProvider} from "react-router-dom";
+import {Provider} from 'react-redux'
+import {MemoryRouter, Route, RouterProvider, Routes} from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
-import router from "./router";
+import router, {MainLazyPage} from "./router";
 import reportWebVitals from './reportWebVitals';
 import store from './store'
-import { theme } from './themes'
-import { Footer, Header } from './components'
+import {theme} from './themes'
+import {Footer, Header} from './components'
 
 import './index.scss'
 
@@ -23,6 +23,9 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import {Home} from "@mui/icons-material";
+import GamesPage from "./pages/Games";
+import App from "./App";
 
 //----------------------------------------------------------------------------------------------------------------------
 // Root Element
@@ -34,13 +37,23 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<React.StrictMode>
-		<Provider store={ store }>
-			<ThemeProvider theme={ theme }>
+		<Provider store={store}>
+			<ThemeProvider theme={theme}>
 				<div className="container">
-					<Header />
-					<RouterProvider router={ router } />
-					<Footer />
+
+					<MemoryRouter>
+						<Header/>
+						<Routes>
+							<Route path='/' element={<MainLazyPage/>}/>
+							<Route path='/main' element={<MainLazyPage/>}/>
+							<Route path='/games' element={<GamesPage/>}/>
+							<Route path='/checkroom' element={<App/>}/>
+						</Routes>
+						<Footer/>
+					</MemoryRouter>
+
 				</div>
+
 			</ThemeProvider>
 		</Provider>
 	</React.StrictMode>

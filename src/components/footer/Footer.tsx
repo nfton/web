@@ -1,8 +1,8 @@
-import React, { memo, useEffect, useMemo } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React, {memo, useEffect, useMemo} from 'react'
+import {useLocation, useNavigate} from 'react-router-dom'
 import nextId from 'react-id-generator'
-import { IconButton, Toolbar } from '@mui/material'
-import { theme } from '../../themes'
+import {IconButton, Toolbar} from '@mui/material'
+import {theme} from '../../themes'
 
 import './footer.scss'
 
@@ -10,7 +10,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront'
 import PetsIcon from '@mui/icons-material/Pets'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import GroupsIcon from '@mui/icons-material/Groups'
-import { EPages } from '../../types'
+import {EPages} from '../../types'
 
 interface IFooterTool {
 	key: EPages | '',
@@ -20,19 +20,19 @@ interface IFooterTool {
 const FOOTER_TOOLS: IFooterTool[] = [
 	{
 		key: EPages.MARKETPLACE,
-		icon: <StorefrontIcon fontSize='large' />,
+		icon: <StorefrontIcon fontSize='large'/>,
 	},
 	{
-		key: '',
-		icon: <PetsIcon fontSize='large' />,
+		key: "",
+		icon: <PetsIcon fontSize='large'/>,
 	},
 	{
 		key: EPages.CHECKROOM,
-		icon: <CheckroomIcon fontSize='large' />,
+		icon: <CheckroomIcon fontSize='large'/>,
 	},
 	{
 		key: EPages.GROUPS,
-		icon: <GroupsIcon fontSize='large' />,
+		icon: <GroupsIcon fontSize='large'/>,
 	}
 ]
 
@@ -42,30 +42,30 @@ export const Footer: React.FC = memo(() => {
 
 	const pathname = useMemo(() => {
 		return location.pathname.substring(1)
-	}, [ location ])
+	}, [location])
 
 	useEffect(() => {
 		console.log(location)
-	}, [ location ])
+	}, [location])
 
 	return (
 		<div
 			className="footer"
 			id={nextId('footer-')}
-			style={{ backgroundColor: theme.palette.background.default, color: theme.palette.text.primary }}
+			style={{backgroundColor: theme.palette.background.default, color: theme.palette.text.primary}}
 		>
 			<Toolbar className="tools">
-				{ FOOTER_TOOLS.map((tool) =>
+				{FOOTER_TOOLS.map((tool) =>
 					<IconButton
 						className="tool"
-						key={ nextId('footer-tool-') }
+						key={nextId('footer-tool-')}
 						aria-label="delete"
-						color={ pathname === tool.key ? 'inherit' : 'primary' }
+						color={pathname === tool.key ? 'inherit' : 'primary'}
 						size="large"
-						style={{ backgroundColor: pathname === tool.key ? theme.palette.secondary.main : 'inherit' }}
-						onClick={ () => navigate('/' + tool.key)}
+						style={{backgroundColor: pathname === tool.key ? theme.palette.secondary.main : 'inherit'}}
+						onClick={() => navigate('/' + tool.key)}
 					>
-					{ tool.icon }
+						{tool.icon}
 					</IconButton>
 				)}
 			</Toolbar>
