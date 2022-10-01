@@ -17,3 +17,10 @@ export enum EPages {
 	GROUPS = 'groups',
 	MARKETPLACE = 'marketplace',
 }
+
+
+export interface Game {
+	type: string
+	image: string
+	players: number
+}
