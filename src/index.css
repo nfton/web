@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 code {

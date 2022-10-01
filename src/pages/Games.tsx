@@ -34,7 +34,7 @@ const games: Game[] = [
 	}
 ]
 
-const GamesPage: React.FC = () => {
+const GamesPage: React.FC = memo(() => {
 	return (
 		<div className="games-container">
 			<Typography color={theme.palette.text.primary} variant="h4" align={"center"}
@@ -80,7 +80,7 @@ const GamesPage: React.FC = () => {
 				))}
 			</div>
 		</div>)
-}
+})
 
 
 export default GamesPage

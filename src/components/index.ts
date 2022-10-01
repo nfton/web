@@ -2,6 +2,7 @@
 // Exports
 //----------------------------------------------------------------------------------------------------------------------
 
-export * from './header/Header'
-export * from './footer/Footer'
 export * from './control/Control'
+export * from './dog/Dog'
+export * from './footer/Footer'
+export * from './header/Header'

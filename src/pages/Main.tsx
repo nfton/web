@@ -1,14 +1,12 @@
 import React, { memo } from 'react'
-import { Control } from "../components";
-
-const Dog = () => (<div></div>)
+import { Control, Dog } from "../components"
 
 const MainPage: React.FC = memo(() => {
 	return (
-		<div className="page page--w-h">
+		<>
 			<Dog/>
 			<Control/>
-		</div>
+		</>
 	)
 })
 
