@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 import React, {memo, useCallback} from 'react'
-import {AppBar, Button, IconButton, Toolbar} from '@mui/material'
+import { Button, IconButton, Toolbar} from '@mui/material'
 import {useAction, useTypedSelector} from '../../hooks'
 import {ECoins} from '../../types'
 import nextId from 'react-id-generator'
