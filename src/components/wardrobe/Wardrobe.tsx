@@ -5,12 +5,17 @@ import {Box, Tab, Tabs} from "@mui/material";
 import {EAttributes, ECharacteristics} from "../../types";
 import NFTCard from "../nft_card/NFTCard";
 
+import {useWindowDimensions} from "../../hooks";
+
 export const Wardrobe: React.FC = memo(() => {
+	const {height} = useWindowDimensions()
+
 	const divStyle: CSSProperties = {
+		height: (height - (height * 0.4) - 80 - 70) + 'px',
 		backgroundColor: theme.palette.background.paper
 	}
 
-	const [value, setValue] = React.useState('hats');
+	const [value, setValue] = React.useState('cardigan');
 
 	const handleChange = (event: React.SyntheticEvent, newValue: string) => {
 		setValue(newValue);
