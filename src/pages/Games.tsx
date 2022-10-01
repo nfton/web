@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import {Game} from "../types";
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 import {theme} from "../themes";

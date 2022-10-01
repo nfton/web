@@ -44,7 +44,7 @@ export const Header: React.FC = memo(() => {
 						variant="text"
 						color="inherit"
 						onClick={ handleLevelOrderWindow }
-						startIcon={ <ArrowCircleUpIcon color='primary' /> }
+						startIcon={ <ArrowCircleUpIcon className="icon" color='primary' fontSize='large' /> }
 					>
 						{level}
 					</Button>
@@ -63,7 +63,7 @@ export const Header: React.FC = memo(() => {
 					variant="text"
 					color="inherit"
 					onClick={ switchCurrentCoin }
-					endIcon={ currentCoin === ECoins.TON ? iconTon : <MonetizationOnIcon /> }
+					endIcon={ currentCoin === ECoins.TON ? iconTon : <MonetizationOnIcon className="icon" fontSize='large' /> }
 				>
 					{ currentCoin === ECoins.TON ? tonAmount.toFixed(2) : gameAmount }
 				</Button>
