@@ -1,6 +1,5 @@
-import React, { memo, useEffect, useState } from 'react'
-import {Control, Footer} from "../components";
-import useWindowDimensions from "../hooks/useWindowDimensions";
+import React, { memo } from 'react'
+import { Control } from "../components";
 
 const Dog = () => (<div></div>)
 

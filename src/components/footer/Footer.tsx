@@ -57,7 +57,7 @@ export const Footer: React.FC = memo(() => {
 			<Toolbar className="tools">
 				{ FOOTER_TOOLS.map((tool) =>
 					<IconButton
-						className="tool animated-circle-btn"
+						className="tool"
 						key={ nextId('footer-tool-') }
 						aria-label="delete"
 						color={ pathname === tool.key ? 'inherit' : 'primary' }

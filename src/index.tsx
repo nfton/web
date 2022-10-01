@@ -11,7 +11,7 @@ import router from "./router";
 import reportWebVitals from './reportWebVitals';
 import store from './store'
 import { theme } from './themes'
-import { Header } from './components'
+import { Footer, Header } from './components'
 
 import './index.scss'
 
@@ -39,6 +39,7 @@ root.render(
 				<div className="container">
 					<Header />
 					<RouterProvider router={ router } />
+					<Footer />
 				</div>
 			</ThemeProvider>
 		</Provider>

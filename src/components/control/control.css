@@ -1,17 +1,15 @@
-.control-play {
-  height: 75px;
-  width: 75%;
-  font-size: 2em !important;
-  border-radius: 20px !important;
-}
-
 .control-container {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: auto;
   padding-top: 60px;
+}
+.control-container .button {
+  height: 75px;
+  width: 75%;
+  font-size: 2rem !important;
+  border-radius: 10px !important;
 }
 
 /*# sourceMappingURL=control.css.map */
