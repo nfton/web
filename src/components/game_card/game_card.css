@@ -1,0 +1,41 @@
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  padding: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.game-card .image {
+  width: calc(100% + 16px);
+  max-width: unset;
+  height: 100px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: -8px -8px 0;
+}
+.game-card .game-card__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.game-card .game-card__footer .characteristics {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.game-card .game-card__footer .characteristics .characteristic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+.game-card .game-card__footer .characteristics .characteristic *:not(:last-child) {
+  margin-right: 8px;
+}
+.game-card .game-card__footer .name {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=game_card.css.map */

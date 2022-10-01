@@ -1,13 +1,14 @@
 .games-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: start;
+  justify-content: space-between;
+  align-items: stretch;
   flex-wrap: wrap;
+  flex: 1 1 0;
+  gap: 8px;
 }
-.games-cards > div {
-  width: 45%;
-  margin: 2%;
+.games-cards .game-card {
+  width: calc(50% - 4px);
 }
 
 .games-container {

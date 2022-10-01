@@ -43,6 +43,12 @@ body {
   text-align: center;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  margin-bottom: 1.5rem;
+}
 .section .section-heading {
   display: block;
   width: 100%;

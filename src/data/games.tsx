@@ -1,11 +1,39 @@
 import { ECharacteristics, IGame } from '../types'
 
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import TimerIcon from '@mui/icons-material/Timer'
+import SpeedIcon from '@mui/icons-material/Speed'
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'
+
 import roadRash from '../images/games/road_rash.png'
 import masterChess from '../images/games/master_chess.png'
 import coloredWords from '../images/games/colored_words.png'
 import mortalKombatMiniGame from '../images/games/mortal_kombat_mini_game.png'
 import tRexOnline from '../images/games/t_rex_online.png'
 import woodcutter from '../images/games/woodcutter.png'
+
+export const CHARACTERISTICS = {
+	[ECharacteristics.HEALTH]: {
+		color: '#F44336',
+		icon: <FavoriteIcon color='inherit' />,
+		title: "Health"
+	},
+	[ECharacteristics.TIME]: {
+		color: '#4CAF50',
+		icon: <TimerIcon color='inherit' />,
+		title: "Time",
+	},
+	[ECharacteristics.SPEED]: {
+		color: '#3F51B5',
+		icon: <SpeedIcon color='inherit' />,
+		title: "Speed",
+	},
+	[ECharacteristics.STRENGTH]: {
+		color: '#FFC107',
+		icon: <FitnessCenterIcon color='inherit' />,
+		title: "Strength",
+	}
+}
 
 export const GAMES: IGame[] = [
 	{
