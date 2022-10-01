@@ -1,0 +1,30 @@
+.header-tools {
+  display: flex;
+  justify-content: space-between;
+}
+.header-tools .level {
+  display: flex;
+  align-items: center;
+  margin-left: -8px;
+}
+.header-tools .level .value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.header-tools .balance {
+  display: flex;
+  align-items: center;
+  margin-right: -8px;
+}
+.header-tools .balance .amount {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.header-tools .balance .coin .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/*# sourceMappingURL=header.css.map */
