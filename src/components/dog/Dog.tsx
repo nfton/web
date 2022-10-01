@@ -7,15 +7,20 @@ import {pattern0} from '../../icons'
 import './dog.scss'
 
 import dDog from '../../images/characters/dDog.png'
+import {Characteristics} from "../characteristics/Characteristics";
 
-export const Dog: React.FC = memo(() => {
+interface IDog {
+	checkroom?: boolean;
+}
+
+export const Dog: React.FC<IDog> = memo(({checkroom}) => {
 
 	const {height} = useWindowDimensions()
 
 	// @ts-ignore
 	const divHeight = Math.min((window.Telegram.WebApp?.viewportStableHeight || 9999) - 70, height - 150 - 70 - 70)
 	const divStyle: CSSProperties = {
-		height: divHeight > 0 ? divHeight + 'px' : 'auto',
+		height: checkroom ? '40vh' : divHeight > 0 ? divHeight + 'px' : 'auto',
 		backgroundColor: theme.palette.primary.dark
 	}
 
@@ -25,7 +30,12 @@ export const Dog: React.FC = memo(() => {
 				{pattern0}
 			</div>
 			<div className="d-dog">
-				<img src={dDog} alt="character" className="image"/>
+				<img src={dDog} alt="character" className={checkroom ? "imageCheckroom" : "image"}/>
+				{checkroom && (
+					<div className="characteristics">
+						<Characteristics/>
+					</div>
+				)}
 			</div>
 		</div>
 	)
