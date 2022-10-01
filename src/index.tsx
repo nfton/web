@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux'
 import {MemoryRouter, Route, RouterProvider, Routes} from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
-import router, {MainLazyPage} from "./router";
 import reportWebVitals from './reportWebVitals';
 import store from './store'
 import {theme} from './themes'
@@ -26,6 +25,7 @@ import '@fontsource/roboto/700.css';
 import {Home} from "@mui/icons-material";
 import GamesPage from "./pages/Games";
 import App from "./App";
+import MainPage from './pages/Main';
 
 //----------------------------------------------------------------------------------------------------------------------
 // Root Element
@@ -40,15 +40,17 @@ root.render(
 		<Provider store={store}>
 			<ThemeProvider theme={theme}>
 				<div className="container">
-
 					<MemoryRouter>
 						<Header/>
-						<Routes>
-							<Route path='/' element={<MainLazyPage/>}/>
-							<Route path='/main' element={<MainLazyPage/>}/>
-							<Route path='/games' element={<GamesPage/>}/>
-							<Route path='/checkroom' element={<App/>}/>
-						</Routes>
+						<div className="router-body">
+							<Routes>
+								<Route path='/' element={<MainPage/>}/>
+								<Route path='/main' element={<MainPage/>}/>
+								<Route path='/games' element={<GamesPage/>}/>
+								<Route path='/checkroom' element={<App/>}/>
+								<Route path='/games' element={<GamesPage/>}/>
+							</Routes>
+						</div>
 						<Footer/>
 					</MemoryRouter>
 

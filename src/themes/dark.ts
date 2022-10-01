@@ -19,7 +19,7 @@ export const darkTheme = createTheme({
 		text: {
 			secondary: '#CFCFCF',
 			disabled: '#B3B3B3',
-			primary: '#FFF'
+			primary: '#FFF',
 		}
 	}
 })

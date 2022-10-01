@@ -9,7 +9,7 @@ import './footer.scss'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import PetsIcon from '@mui/icons-material/Pets'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import GroupsIcon from '@mui/icons-material/Groups'
+import GamepadIcon from '@mui/icons-material/Gamepad'
 import {EPages} from '../../types'
 
 interface IFooterTool {
@@ -31,8 +31,8 @@ const FOOTER_TOOLS: IFooterTool[] = [
 		icon: <CheckroomIcon fontSize='large'/>,
 	},
 	{
-		key: EPages.GROUPS,
-		icon: <GroupsIcon fontSize='large'/>,
+		key: EPages.GAMES,
+		icon: <GamepadIcon fontSize='large'/>,
 	}
 ]
 
