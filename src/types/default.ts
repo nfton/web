@@ -53,5 +53,5 @@ export interface INFTCard {
 	type: EAttributes
 	image: string
 	characteristics: ICharacteristics
-
+	price?: number
 }

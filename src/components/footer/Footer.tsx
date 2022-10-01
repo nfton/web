@@ -9,7 +9,7 @@ import './footer.scss'
 import StorefrontIcon from '@mui/icons-material/Storefront'
 import PetsIcon from '@mui/icons-material/Pets'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import GamepadIcon from '@mui/icons-material/Gamepad'
+import GamepadIcon from '@mui/icons-material/SportsEsports'
 import {EPages} from '../../types'
 
 interface IFooterTool {
