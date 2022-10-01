@@ -3,14 +3,13 @@ import React, {CSSProperties, memo} from "react";
 import {theme} from "../../themes";
 import {Box, Tab, Tabs, Typography} from "@mui/material";
 import {EAtributes} from "../../types";
-import {GAMES} from "../../data";
 
 export const Wardrobe: React.FC = memo(() => {
     const divStyle: CSSProperties = {
         backgroundColor: theme.palette.background.paper
     }
 
-    const [value, setValue] = React.useState('one');
+    const [value, setValue] = React.useState('hats');
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
@@ -23,12 +22,12 @@ export const Wardrobe: React.FC = memo(() => {
                 onChange={handleChange}
                 textColor="secondary"
                 indicatorColor="secondary"
-                aria-label="secondary tabs example"
+                aria-label="tabs"
             >
-                <Tab value="one" label={EAtributes.HATS} />
-                <Tab value="two" label={EAtributes.COLLAR} />
-                <Tab value="three" label={EAtributes.PANTS} />
-                <Tab value="three" label={EAtributes.TSHIRT} />
+                <Tab value="hats" label={EAtributes.HATS} />
+                <Tab value="collar" label={EAtributes.COLLAR} />
+                <Tab value="pants" label={EAtributes.PANTS} />
+                <Tab value="tshirt" label={EAtributes.TSHIRT} />
             </Tabs>
         </Box>
     </div>

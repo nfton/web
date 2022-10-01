@@ -33,10 +33,10 @@ export enum EAtributes {
 }
 
 export interface ICharacteristics {
-	health: number,
-	speed: number,
-	strength: number,
-	time: number,
+[ECharacteristics.HEALTH]: number,
+	[ECharacteristics.SPEED]: number,
+	[ECharacteristics.STRENGTH]: number,
+	[ECharacteristics.TIME]: number,
 }
 
 export interface IGame {
