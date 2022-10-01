@@ -2,7 +2,7 @@ import './wardrobe.scss'
 import React, {CSSProperties, memo} from "react";
 import {theme} from "../../themes";
 import {Box, Tab, Tabs, Typography} from "@mui/material";
-import {EAtributes} from "../../types";
+import {EAttributes} from "../../types";
 
 export const Wardrobe: React.FC = memo(() => {
     const divStyle: CSSProperties = {
@@ -24,10 +24,10 @@ export const Wardrobe: React.FC = memo(() => {
                 indicatorColor="secondary"
                 aria-label="tabs"
             >
-                <Tab value="hats" label={EAtributes.HATS} />
-                <Tab value="collar" label={EAtributes.COLLAR} />
-                <Tab value="pants" label={EAtributes.PANTS} />
-                <Tab value="tshirt" label={EAtributes.TSHIRT} />
+                <Tab value="hats" label={EAttributes.CARDIGAN} />
+                <Tab value="collar" label={EAttributes.COLLAR} />
+                <Tab value="pants" label={EAttributes.PANTS} />
+                <Tab value="t-shirt" label={EAttributes.T_SHIRT} />
             </Tabs>
         </Box>
     </div>

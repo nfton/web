@@ -4,3 +4,4 @@
 
 export * from './coins'
 export * from './player'
+export * from './nft'

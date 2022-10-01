@@ -25,15 +25,15 @@ export enum ECharacteristics {
 	TIME = 'time',
 }
 
-export enum EAtributes {
-	HATS = 'hats',
-	TSHIRT = 'tshirt',
+export enum EAttributes {
+	CARDIGAN = 'cardigan',
+	T_SHIRT = 't-shirt',
 	PANTS = 'pants',
 	COLLAR = 'collar',
 }
 
 export interface ICharacteristics {
-[ECharacteristics.HEALTH]: number,
+	[ECharacteristics.HEALTH]: number,
 	[ECharacteristics.SPEED]: number,
 	[ECharacteristics.STRENGTH]: number,
 	[ECharacteristics.TIME]: number,
@@ -46,4 +46,12 @@ export interface IGame {
 	image: string,
 	name: string
 	players: number,
+}
+
+
+export interface INFTCard {
+	type: EAttributes
+	image: string
+	characteristics: ICharacteristics
+
 }
