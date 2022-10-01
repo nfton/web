@@ -9,7 +9,6 @@ const MainPage: React.FC = memo(() => {
 		<div className="page page--w-h">
 			<Dog/>
 			<Control/>
-			<Footer/>
 		</div>
 	)
 })

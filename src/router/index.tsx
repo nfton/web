@@ -6,13 +6,13 @@ import {lazy} from 'react'
 import {createMemoryRouter} from "react-router-dom"
 import App from "../App"
 import {EPages} from '../types'
+import GamesPage from "../pages/Games";
 
 //----------------------------------------------------------------------------------------------------------------------
 // Pages
 //----------------------------------------------------------------------------------------------------------------------
 
 const MainLazyPage = lazy(() => import('../pages/Main'))
-const GamesLazyPage = lazy(() => import('../pages/Games'))
 
 //----------------------------------------------------------------------------------------------------------------------
 // Router
@@ -28,10 +28,10 @@ const router = createMemoryRouter([
 		id: 'main'
 	}, {
 		path: EPages.GAMES,
-		element: <GamesLazyPage/>,
+		element: <GamesPage/>,
 		id: EPages.GAMES
 	}, {
-		path: "/app",
+		path: EPages.CHECKROOM,
 		element: <App/>,
 		id: 'app'
 	},
