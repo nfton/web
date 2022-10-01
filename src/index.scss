@@ -18,7 +18,7 @@ body {
 }
 
 .page {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
 }
@@ -30,24 +30,4 @@ code {
 
 .icon {
   fill: currentColor;
-}
-
-.animated-circle-btn {
-  animation: btn-click .2s;
-  -webkit-animation: btn-click .2s;
-}
-
-@include keyframes-animation(btn-click) {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  50% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
 }
