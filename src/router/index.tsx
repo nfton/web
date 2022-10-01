@@ -5,6 +5,7 @@
 import {lazy} from 'react'
 import {createMemoryRouter} from "react-router-dom"
 import App from "../App"
+import {EPages} from '../types'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Pages
@@ -22,13 +23,13 @@ const router = createMemoryRouter([
 		path: "/",
 		element: <MainLazyPage/>,
 	}, {
-		path: "/main",
+		path: EPages.MARKETPLACE,
 		element: <MainLazyPage/>,
 		id: 'main'
 	}, {
-		path: "/games",
+		path: EPages.GAMES,
 		element: <GamesLazyPage/>,
-		id: 'games'
+		id: EPages.GAMES
 	}, {
 		path: "/app",
 		element: <App/>,
