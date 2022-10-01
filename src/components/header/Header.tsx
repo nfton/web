@@ -12,7 +12,7 @@ import { theme } from '../../themes'
 
 import './header.scss'
 
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
+import LocalAtmIcon from '@mui/icons-material/LocalAtm'
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
 import AddIcon from '@mui/icons-material/Add'
 
@@ -63,7 +63,7 @@ export const Header: React.FC = memo(() => {
 					variant="text"
 					color="inherit"
 					onClick={ switchCurrentCoin }
-					endIcon={ currentCoin === ECoins.TON ? iconTon : <MonetizationOnIcon className="icon" fontSize='large' /> }
+					endIcon={ currentCoin === ECoins.TON ? iconTon : <LocalAtmIcon className="icon" fontSize='large' /> }
 				>
 					{ currentCoin === ECoins.TON ? tonAmount.toFixed(2) : gameAmount }
 				</Button>

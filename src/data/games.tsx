@@ -13,27 +13,25 @@ import tRexOnline from '../images/games/t_rex_online.png'
 import woodcutter from '../images/games/woodcutter.png'
 
 
-
-
 export const CHARACTERISTICS = {
 	[ECharacteristics.HEALTH]: {
 		color: '#F44336',
-		icon: <FavoriteIcon color='inherit'/>,
+		icon: <FavoriteIcon color='inherit' style={{color: '#F44336'}}/>,
 		title: "Health"
 	},
 	[ECharacteristics.TIME]: {
 		color: '#4CAF50',
-		icon: <TimerIcon color='inherit'/>,
+		icon: <TimerIcon color='inherit' style={{color: '#4CAF50'}}/>,
 		title: "Time",
 	},
 	[ECharacteristics.SPEED]: {
 		color: '#3F51B5',
-		icon: <SpeedIcon color='inherit'/>,
+		icon: <SpeedIcon color='inherit' style={{color: '#3F51B5'}}/>,
 		title: "Speed",
 	},
 	[ECharacteristics.STRENGTH]: {
 		color: '#FFC107',
-		icon: <FitnessCenterIcon color='inherit'/>,
+		icon: <FitnessCenterIcon color='inherit' style={{color: '#FFC107'}}/>,
 		title: "Strength",
 	}
 }
