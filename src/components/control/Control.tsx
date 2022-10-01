@@ -12,7 +12,7 @@ export const Control: React.FC = memo(() => {
 	const navigate = useNavigate()
 
 	// @ts-ignore
-	const divHeight = Math.max(height - (window.Telegram.WebApp?.viewportStableHeight || 0) - 80, 250)
+	const divHeight = Math.max(height - (window.Telegram.WebApp?.viewportStableHeight || 0) - 80, 170)
 	const divStyle: CSSProperties = {
 		height: divHeight + 'px',
 		backgroundColor: theme.palette.primary.dark

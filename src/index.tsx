@@ -4,13 +4,13 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
-import { ThemeProvider } from '@mui/material'
+import {Provider} from 'react-redux'
+import {MemoryRouter, Route, Routes} from 'react-router-dom'
+import {ThemeProvider} from '@mui/material'
 import reportWebVitals from './reportWebVitals'
 import store from './store'
-import { theme } from './themes'
-import { Footer, Header } from './components'
+import {theme} from './themes'
+import {Footer, Header} from './components'
 
 import './index.scss'
 
@@ -31,27 +31,41 @@ import App from "./App";
 // Root Element
 //----------------------------------------------------------------------------------------------------------------------
 
+import {initializeApp} from "firebase/app";
+
+const firebaseConfig = {
+	apiKey: "AIzaSyB1TpbBCEurdfA6jaJpms2SCJxPDKWuoX8",
+	authDomain: "nfton-space.firebaseapp.com",
+	projectId: "nfton-space",
+	storageBucket: "nfton-space.appspot.com",
+	messagingSenderId: "512683949682",
+	appId: "1:512683949682:web:865704884c67379aa64ceb",
+	measurementId: "G-4TTT53K3YL"
+};
+
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 
 root.render(
 	<React.StrictMode>
-		<Provider store={ store }>
-			<ThemeProvider theme={ theme }>
+		<Provider store={store}>
+			<ThemeProvider theme={theme}>
 				<div className="container">
 					<MemoryRouter>
-						<Header />
+						<Header/>
 						<div className="page">
 							<Routes>
-								<Route path="/" element={ <MainPage /> } />
-								<Route path="/main" element={ <MainPage /> } />
-								<Route path="/games" element={ <GamesPage /> } />
-								<Route path="/checkroom" element={ <App /> } />
-								<Route path="/games" element={ <GamesPage /> } />
+								<Route path="/" element={<MainPage/>}/>
+								<Route path="/main" element={<MainPage/>}/>
+								<Route path="/games" element={<GamesPage/>}/>
+								<Route path="/checkroom" element={<App/>}/>
+								<Route path="/games" element={<GamesPage/>}/>
 							</Routes>
 						</div>
-						<Footer />
+						<Footer/>
 					</MemoryRouter>
 				</div>
 			</ThemeProvider>
