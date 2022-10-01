@@ -34,7 +34,7 @@ export const Header: React.FC = memo(() => {
 		<div
 			className="header"
 			id={nextId('header-')}
-			style={{ backgroundColor: theme.palette.background.default }}
+			style={{ backgroundColor: theme.palette.background.default, color: theme.palette.text.primary }}
 		>
 			<Toolbar className="header-tools">
 				<div className="level">
