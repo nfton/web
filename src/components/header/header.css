@@ -20,6 +20,10 @@
   font-weight: 700;
   line-height: 36px;
 }
+.header .tools .level .value .icon {
+  width: 24px;
+  height: 24px;
+}
 .header .tools .balance {
   display: flex;
   margin-right: -8px;

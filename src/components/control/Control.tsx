@@ -15,7 +15,7 @@ export const Control: React.FC = memo(() => {
 	const divHeight = Math.max(height - (window.Telegram.WebApp?.viewportStableHeight || 0) - 80, 250)
 	const divStyle: CSSProperties = {
 		height: divHeight + 'px',
-		backgroundColor: theme.palette.primary.dark
+		backgroundColor: theme.palette.background.paper
 	}
 	return <div style={ divStyle } className="control-container">
 		<Button

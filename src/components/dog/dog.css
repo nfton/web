@@ -1,0 +1,18 @@
+.dog {
+  position: relative;
+  height: 100%;
+}
+.dog .pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+}
+.dog .pattern > svg {
+  fill: currentColor;
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=dog.css.map */
