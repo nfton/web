@@ -13,7 +13,7 @@ export const Dog: React.FC = memo(() => {
 	const {height} = useWindowDimensions()
 
 	// @ts-ignore
-	const divHeight = Math.min((window.Telegram.WebApp?.viewportStableHeight || 9999) - 70, height - 170 - 70 - 80)
+	const divHeight = Math.min((window.Telegram.WebApp?.viewportStableHeight || 9999) - 70, height - 150 - 70 - 70)
 	const divStyle: CSSProperties = {
 		height: divHeight > 0 ? divHeight + 'px' : 'auto',
 		backgroundColor: theme.palette.primary.dark

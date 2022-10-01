@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, {memo} from "react";
 import {Game} from "../types";
 import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 import {theme} from "../themes";
@@ -7,28 +7,34 @@ import "./games.scss"
 const games: Game[] = [
 	{
 		type: 'COLORS',
+		name: 'Colors',
 		image: 'https://picsum.photos/300/101',
 		players: 2
 	}, {
 		type: 'RACE',
+		name: 'Race',
 		image: 'https://picsum.photos/300/102',
 		players: 2
 	},
 	{
-		type: 'LONG LONG NAME OF A GAME',
+		type: 'GAME',
+		name: 'Long Long Long Name of a Game',
 		image: 'https://picsum.photos/300/103',
 		players: 2
 	},
 	{
 		type: 'BIRD',
+		name: 'Bird',
 		image: 'https://picsum.photos/300/105',
 		players: 2
 	}, {
+		name: 'Words',
 		type: 'WORDS',
 		image: 'https://picsum.photos/300/104',
 		players: 1
 	}, {
-		type: 'STAR WARS',
+		type: 'STARWARS',
+		name: 'Star Wars',
 		image: 'https://picsum.photos/300/106',
 		players: 1
 	}
@@ -52,7 +58,7 @@ const GamesPage: React.FC = memo(() => {
 						/>
 						<CardContent sx={{padding: '10px 10px 3px 10px'}}>
 							<Typography gutterBottom variant="h6" component="div">
-								{e.type}
+								{e.name}
 							</Typography>
 						</CardContent>
 					</Card>
@@ -71,7 +77,7 @@ const GamesPage: React.FC = memo(() => {
 						/>
 						<CardContent sx={{padding: '10px 10px 3px 10px'}}>
 							<Typography gutterBottom variant="h6" component="div">
-								{e.type}
+								{e.name}
 							</Typography>
 						</CardContent>
 					</Card>

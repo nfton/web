@@ -21,6 +21,7 @@ export enum EPages {
 
 export interface Game {
 	type: string
+	name: string
 	image: string
 	players: number
 }

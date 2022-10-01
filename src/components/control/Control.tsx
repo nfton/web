@@ -12,7 +12,7 @@ export const Control: React.FC = memo(() => {
 	const navigate = useNavigate()
 
 	// @ts-ignore
-	const divHeight = Math.max(height - (window.Telegram.WebApp?.viewportStableHeight || 0) - 70, 170)
+	const divHeight = Math.max(height - (window.Telegram.WebApp?.viewportStableHeight || 0) - 80, 150)
 	const divStyle: CSSProperties = {
 		height: divHeight + 'px',
 		backgroundColor: theme.palette.background.paper
@@ -23,8 +23,7 @@ export const Control: React.FC = memo(() => {
 			size="large"
 			className="button"
 			color="primary"
-			onClick={() => navigate(EPages.GAMES)}
-		>
+			onClick={() => navigate(EPages.GAMES)}>
 			Play games
 		</Button>
 	</div>
