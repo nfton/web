@@ -1,83 +1,48 @@
-import React, {memo} from "react";
-import {Game} from "../types";
-import {Card, CardContent, CardMedia, Typography} from "@mui/material";
-import {theme} from "../themes";
-import "./games.scss"
+import React, { memo } from 'react'
+import { Card, CardContent, CardMedia, Typography } from '@mui/material'
+import { theme } from '../themes'
+import { GAMES } from '../data'
 
-const games: Game[] = [
-	{
-		type: 'COLORS',
-		name: 'Colors',
-		image: 'https://picsum.photos/300/101',
-		players: 2
-	}, {
-		type: 'RACE',
-		name: 'Race',
-		image: 'https://picsum.photos/300/102',
-		players: 2
-	},
-	{
-		type: 'GAME',
-		name: 'Long Long Long Name of a Game',
-		image: 'https://picsum.photos/300/103',
-		players: 2
-	},
-	{
-		type: 'BIRD',
-		name: 'Bird',
-		image: 'https://picsum.photos/300/105',
-		players: 2
-	}, {
-		name: 'Words',
-		type: 'WORDS',
-		image: 'https://picsum.photos/300/104',
-		players: 1
-	}, {
-		type: 'STARWARS',
-		name: 'Star Wars',
-		image: 'https://picsum.photos/300/106',
-		players: 1
-	}
-]
+import './games.scss'
 
 const GamesPage: React.FC = memo(() => {
 	return (
 		<div className="games-container">
-			<Typography color={theme.palette.text.primary} variant="h4" align={"center"}
-			            sx={{paddingTop: '10px'}}>Games</Typography>
-			<Typography color={theme.palette.text.disabled} variant="h6" align={"center"}
-			            sx={{paddingTop: '10px'}}>Multiplayer</Typography>
-			<div className={'games-cards games-cards__multiplayer'}>
-				{games.filter(e => e.players > 1).map(e => (
-					<Card key={e.type} variant={"outlined"}>
+			<span className="page-heading">Games</span>
+			<section className="section">
+				<span className="section-heading" style={{ color: theme.palette.text.secondary }}>Multiplayer</span>
+			<div className="games-cards games-cards__multiplayer">
+				{GAMES.filter((game) => game.players > 1).map((game) => (
+					<Card key={game.id} variant={"outlined"}>
 						<CardMedia
 							component="img"
 							height={100}
-							image={e.image}
-							alt={e.type}
+							image={game.image}
+							alt={game.name}
 						/>
 						<CardContent sx={{padding: '10px 10px 3px 10px'}}>
 							<Typography gutterBottom variant="h6" component="div">
-								{e.name}
+								{game.name}
 							</Typography>
 						</CardContent>
 					</Card>
 				))}
 			</div>
+			</section>
 			<Typography color={theme.palette.text.disabled} variant="h6" align={"center"}
 			            sx={{paddingTop: '10px'}}>SinglePlayer</Typography>
 			<div className={'games-cards games-cards__multiplayer'}>
-				{games.filter(e => e.players === 1).map(e => (
-					<Card key={e.type} variant={"outlined"}>
+				{GAMES.filter((game) => game.players === 1).map((game) => (
+					<Card key={game.id} variant={"outlined"}>
 						<CardMedia
 							component="img"
 							height={100}
-							image={e.image}
-							alt={e.type}
+							image={game.image}
+							alt={game.name}
 						/>
 						<CardContent sx={{padding: '10px 10px 3px 10px'}}>
 							<Typography gutterBottom variant="h6" component="div">
-								{e.name}
+								{game.name}
 							</Typography>
 						</CardContent>
 					</Card>

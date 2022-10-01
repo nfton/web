@@ -18,10 +18,18 @@ export enum EPages {
 	MARKETPLACE = 'marketplace',
 }
 
+export enum ECharacteristics {
+	HEALTH = 'health',
+	SPEED = 'speed',
+	STRENGTH = 'strength',
+	TIME = 'time',
+}
 
-export interface Game {
-	type: string
+export interface IGame {
+	characteristics: ECharacteristics[],
+	description?: string,
+	id: string
+	image: string,
 	name: string
-	image: string
-	players: number
+	players: number,
 }
