@@ -2,7 +2,7 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { ECoin } from '../default'
+import { ECoins } from '../default'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Coins Action Types Enum
@@ -19,7 +19,7 @@ export enum ECoinsActionTypes {
 
 interface ICoinsSetCurrentCoinAction {
 	type: ECoinsActionTypes.SET_CURRENT_COIN,
-	payload: ECoin
+	payload: ECoins
 }
 
 interface ICoinsSwitchCurrentCoinAction {

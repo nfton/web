@@ -1,37 +1,74 @@
-import React, {useEffect} from "react";
-import {AppBar, Box, Button, Fab, IconButton, styled, Toolbar} from "@mui/material";
+import React, { memo, useEffect, useMemo } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import nextId from 'react-id-generator'
+import { IconButton, Toolbar } from '@mui/material'
+import { theme } from '../../themes'
 
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import PetsIcon from '@mui/icons-material/Pets';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import GroupsIcon from '@mui/icons-material/Groups';
-import {useLocation} from "react-router-dom";
-import "./footer.scss"
+import './footer.scss'
 
-export const Footer: React.FC = () => {
-	let location = useLocation();
+import StorefrontIcon from '@mui/icons-material/Storefront'
+import PetsIcon from '@mui/icons-material/Pets'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import GroupsIcon from '@mui/icons-material/Groups'
+import { EPages } from '../../types'
+
+interface IFooterTool {
+	key: EPages | '',
+	icon: React.ReactElement
+}
+
+const FOOTER_TOOLS: IFooterTool[] = [
+	{
+		key: EPages.MARKETPLACE,
+		icon: <StorefrontIcon fontSize='large' />,
+	},
+	{
+		key: '',
+		icon: <PetsIcon fontSize='large' />,
+	},
+	{
+		key: EPages.CHECKROOM,
+		icon: <CheckroomIcon fontSize='large' />,
+	},
+	{
+		key: EPages.GROUPS,
+		icon: <GroupsIcon fontSize='large' />,
+	}
+]
+
+export const Footer: React.FC = memo(() => {
+	const location = useLocation()
+	const navigate = useNavigate()
+
+	const pathname = useMemo(() => {
+		return location.pathname.substring(1)
+	}, [ location ])
+
 	useEffect(() => {
 		console.log(location)
-	}, [location])
+	}, [ location ])
+
 	return (
-		<AppBar position="fixed" color="secondary" sx={{top: 'auto', bottom: 0}}>
-			<Toolbar>
-				<IconButton color="inherit">
-					<StorefrontIcon/>
-				</IconButton>
-				<Box sx={{flexGrow: 2}}/>
-				<IconButton color="inherit">
-					<PetsIcon/>
-				</IconButton>
-				<Box sx={{flexGrow: 2}}/>
-				<IconButton color="inherit">
-					<CheckroomIcon/>
-				</IconButton>
-				<Box sx={{flexGrow: 2}}/>
-				<IconButton color="inherit">
-					<GroupsIcon/>
-				</IconButton>
+		<div
+			className="footer"
+			id={nextId('footer-')}
+			style={{ backgroundColor: theme.palette.background.default, color: theme.palette.text.primary }}
+		>
+			<Toolbar className="tools">
+				{ FOOTER_TOOLS.map((tool) =>
+					<IconButton
+						className="tool animated-circle-btn"
+						key={ nextId('footer-tool-') }
+						aria-label="delete"
+						color={ pathname === tool.key ? 'inherit' : 'primary' }
+						size="large"
+						style={{ backgroundColor: pathname === tool.key ? theme.palette.secondary.main : 'inherit' }}
+						onClick={ () => navigate('/' + tool.key)}
+					>
+					{ tool.icon }
+					</IconButton>
+				)}
 			</Toolbar>
-		</AppBar>
+		</div>
 	)
-}
+})

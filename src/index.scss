@@ -1,3 +1,5 @@
+@import "./mixins";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -17,4 +30,24 @@ code {
 
 .icon {
   fill: currentColor;
+}
+
+.animated-circle-btn {
+  animation: btn-click .2s;
+  -webkit-animation: btn-click .2s;
+}
+
+@include keyframes-animation(btn-click) {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }

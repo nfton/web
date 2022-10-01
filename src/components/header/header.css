@@ -2,33 +2,33 @@
   color: #61DAFB;
 }
 
-.header-tools {
+.header .tools {
   display: flex;
   justify-content: space-between;
   height: 70px;
 }
-.header-tools .level {
+.header .tools .level {
   display: flex;
   align-items: center;
   margin-left: -8px;
 }
-.header-tools .level .value {
+.header .tools .level .value {
   font-size: 16px;
   font-weight: 700;
   line-height: 36px;
 }
-.header-tools .balance {
+.header .tools .balance {
   display: flex;
   margin-right: -8px;
 }
-.header-tools .balance .amount {
+.header .tools .balance .amount {
   display: flex;
   align-items: center;
   font-size: 22px;
   font-weight: 700;
   line-height: 36px;
 }
-.header-tools .balance .amount .icon {
+.header .tools .balance .amount .icon {
   width: 24px;
   height: 24px;
 }

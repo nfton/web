@@ -2,7 +2,7 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { ECoin } from '../default'
+import { ECoins } from '../default'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Coins Reducer State Types Enum
@@ -19,7 +19,7 @@ export enum ECoinsStateTypes {
 //----------------------------------------------------------------------------------------------------------------------
 
 export interface ICoinsState {
-	[ECoinsStateTypes.CURRENT_COIN]: ECoin,
+	[ECoinsStateTypes.CURRENT_COIN]: ECoins,
 	[ECoinsStateTypes.GAME_AMOUNT]: number,
 	[ECoinsStateTypes.TON_AMOUNT]: number,
 }

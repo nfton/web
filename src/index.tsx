@@ -13,7 +13,7 @@ import store from './store'
 import { theme } from './themes'
 import { Header } from './components'
 
-import './index.scss';
+import './index.scss'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Fonts
@@ -35,13 +35,15 @@ const root = ReactDOM.createRoot(
 root.render(
 	<React.StrictMode>
 		<Provider store={ store }>
-			<ThemeProvider theme={theme}>
-			<Header />
+			<ThemeProvider theme={ theme }>
+				<div className="container">
+					<Header />
+					<RouterProvider router={ router } />
+				</div>
 			</ThemeProvider>
-			<RouterProvider router={ router } />
 		</Provider>
 	</React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

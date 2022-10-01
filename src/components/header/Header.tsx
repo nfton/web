@@ -5,7 +5,7 @@
 import React, {memo, useCallback} from 'react'
 import {AppBar, Button, IconButton, Toolbar} from '@mui/material'
 import {useAction, useTypedSelector} from '../../hooks'
-import {ECoin} from '../../types'
+import {ECoins} from '../../types'
 import nextId from 'react-id-generator'
 import {iconTon} from '../../icons'
 import { theme } from '../../themes'
@@ -36,7 +36,7 @@ export const Header: React.FC = memo(() => {
 			id={nextId('header-')}
 			style={{ backgroundColor: theme.palette.background.default, color: theme.palette.text.primary }}
 		>
-			<Toolbar className="header-tools">
+			<Toolbar className="tools">
 				<div className="level">
 					<Button
 						id={ nextId('header-') }
@@ -63,9 +63,9 @@ export const Header: React.FC = memo(() => {
 					variant="text"
 					color="inherit"
 					onClick={ switchCurrentCoin }
-					endIcon={ currentCoin === ECoin.TON ? iconTon : <MonetizationOnIcon /> }
+					endIcon={ currentCoin === ECoins.TON ? iconTon : <MonetizationOnIcon /> }
 				>
-					{ currentCoin === ECoin.TON ? tonAmount.toFixed(2) : gameAmount }
+					{ currentCoin === ECoins.TON ? tonAmount.toFixed(2) : gameAmount }
 				</Button>
 				</div>
 			</Toolbar>
