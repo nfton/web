@@ -1,4 +1,5 @@
-import { darkTheme } from "./dark";
-import { lightTheme } from "./light";
+import { darkTheme } from "./dark"
+import { lightTheme } from "./light"
 
-export {lightTheme, darkTheme}
+// @ts-ignore
+export const theme = window.Telegram.WebApp.colorScheme === 'dark' ? darkTheme : lightTheme

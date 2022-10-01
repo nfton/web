@@ -10,7 +10,7 @@ import {ThemeProvider} from "@mui/material";
 import router from "./router";
 import reportWebVitals from './reportWebVitals';
 import store from './store'
-import { darkTheme, lightTheme } from './themes';
+import { theme } from './themes'
 import { Header } from './components'
 
 import './index.scss';
@@ -31,8 +31,7 @@ import '@fontsource/roboto/700.css';
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
-// @ts-ignore
-let theme = window.Telegram.WebApp.colorScheme === 'dark' ? darkTheme : lightTheme
+
 root.render(
 	<React.StrictMode>
 		<Provider store={ store }>

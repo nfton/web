@@ -1,6 +1,11 @@
+.header-wrapper {
+  color: #61DAFB;
+}
+
 .header-tools {
   display: flex;
   justify-content: space-between;
+  height: 70px;
 }
 .header-tools .level {
   display: flex;
@@ -8,21 +13,22 @@
   margin-left: -8px;
 }
 .header-tools .level .value {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 36px;
 }
 .header-tools .balance {
   display: flex;
-  align-items: center;
   margin-right: -8px;
 }
 .header-tools .balance .amount {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
   font-weight: 700;
   line-height: 36px;
 }
-.header-tools .balance .coin .icon {
+.header-tools .balance .amount .icon {
   width: 24px;
   height: 24px;
 }
