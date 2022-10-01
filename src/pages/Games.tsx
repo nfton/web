@@ -8,7 +8,7 @@ import './games.scss'
 const GamesPage: React.FC = memo(() => {
 	return (
 		<div className="games-container">
-			<span className="page-heading">Games</span>
+			<span className="page-heading" style={{ color: theme.palette.text.primary }}>Games</span>
 			<section className="section">
 				<span className="section-heading" style={{ color: theme.palette.text.secondary }}>Multiplayer</span>
 			<div className="games-cards games-cards__multiplayer">

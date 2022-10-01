@@ -11,7 +11,7 @@ export const GameCard: React.FC<IGame & { key: string}> = memo((props) => {
 	return <div className="game-card" key={ key } style={{ backgroundColor: theme.palette.background.default }}>
 		<img className="image" src={ image } alt={ name } />
 		<div className="game-card__footer">
-			<span className="name">{ name }</span>
+			<span className="name" style={{ color: theme.palette.text.primary }}>{ name }</span>
 			<div className="characteristics">
 				{ characteristics.map((characteristic) => <div
 					style={ { color: CHARACTERISTICS[characteristic].color } }
