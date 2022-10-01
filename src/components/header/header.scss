@@ -1,6 +1,11 @@
+.header-wrapper {
+  color: #61DAFB;
+}
+
 .header-tools {
   display: flex;
   justify-content: space-between;
+  height: 70px;
 
   .level {
     display: flex;
@@ -8,7 +13,7 @@
     margin-left: -8px;
 
     .value {
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 700;
       line-height: 36px;
     }
@@ -16,16 +21,15 @@
 
   .balance {
     display: flex;
-    align-items: center;
     margin-right: -8px;
 
     .amount {
-      font-size: 24px;
+      display: flex;
+      align-items: center;
+      font-size: 22px;
       font-weight: 700;
       line-height: 36px;
-    }
 
-    .coin {
       .icon {
         width: 24px;
         height: 24px;

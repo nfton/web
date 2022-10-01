@@ -3,15 +3,18 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 import React, {memo, useCallback} from 'react'
-import {AppBar, IconButton, Toolbar} from '@mui/material'
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
+import {AppBar, Button, IconButton, Toolbar} from '@mui/material'
 import {useAction, useTypedSelector} from '../../hooks'
 import {ECoin} from '../../types'
 import nextId from 'react-id-generator'
 import {iconTon} from '../../icons'
+import { theme } from '../../themes'
 
 import './header.scss'
+
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp'
+import AddIcon from '@mui/icons-material/Add'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Header Component
@@ -28,32 +31,44 @@ export const Header: React.FC = memo(() => {
 	}, [])
 
 	return (
-		<AppBar className="header" position="static" id={nextId('header-')} elevation={0}>
+		<div
+			className="header"
+			id={nextId('header-')}
+			style={{ backgroundColor: theme.palette.background.default }}
+		>
 			<Toolbar className="header-tools">
 				<div className="level">
-					<IconButton
-						id={nextId('header-')}
-						className="arrow"
-						aria-label="delete"
-						onClick={handleLevelOrderWindow}
+					<Button
+						id={ nextId('header-') }
+						className="value"
+						variant="text"
+						color="inherit"
+						onClick={ handleLevelOrderWindow }
+						startIcon={ <ArrowCircleUpIcon color='primary' /> }
 					>
-						<ArrowCircleUpIcon/>
-					</IconButton>
-					<span className="value">{level}</span>
+						{level}
+					</Button>
 				</div>
 				<div className="balance">
-					<span className="amount">{currentCoin === ECoin.TON ? tonAmount.toFixed(2) : gameAmount}</span>
 					<IconButton
-						id={nextId('header-')}
-						className="coin"
-						aria-label="delete"
-						color="default"
-						onClick={switchCurrentCoin}
+						id={ nextId('header-') }
+						className="plus"
+						color="secondary"
 					>
-						{currentCoin === ECoin.TON ? iconTon : <MonetizationOnIcon/>}
+						<AddIcon />
 					</IconButton>
+				<Button
+					id={ nextId('header-') }
+					className="amount"
+					variant="text"
+					color="inherit"
+					onClick={ switchCurrentCoin }
+					endIcon={ currentCoin === ECoin.TON ? iconTon : <MonetizationOnIcon /> }
+				>
+					{ currentCoin === ECoin.TON ? tonAmount.toFixed(2) : gameAmount }
+				</Button>
 				</div>
 			</Toolbar>
-		</AppBar>
+		</div>
 	)
 })
