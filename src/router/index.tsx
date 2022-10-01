@@ -2,7 +2,7 @@
 // Imports
 //----------------------------------------------------------------------------------------------------------------------
 
-import { lazy } from 'react'
+import {lazy} from 'react'
 import {createMemoryRouter} from "react-router-dom"
 import App from "../App"
 
@@ -11,6 +11,7 @@ import App from "../App"
 //----------------------------------------------------------------------------------------------------------------------
 
 const MainLazyPage = lazy(() => import('../pages/Main'))
+const GamesLazyPage = lazy(() => import('../pages/Games'))
 
 //----------------------------------------------------------------------------------------------------------------------
 // Router
@@ -20,11 +21,15 @@ const router = createMemoryRouter([
 	{
 		path: "/",
 		element: <MainLazyPage/>,
-	},{
+	}, {
 		path: "/main",
 		element: <MainLazyPage/>,
 		id: 'main'
-	},{
+	}, {
+		path: "/games",
+		element: <GamesLazyPage/>,
+		id: 'games'
+	}, {
 		path: "/app",
 		element: <App/>,
 		id: 'app'
