@@ -1,7 +1,7 @@
 import React, { CSSProperties, memo } from "react";
 import {useNavigate} from "react-router-dom";
 import { Button } from "@mui/material";
-import useWindowDimensions from '../../hooks/useWindowDimensions'
+import { useWindowDimensions } from '../../hooks'
 import {EPages} from "../../types"
 import { theme } from '../../themes'
 
