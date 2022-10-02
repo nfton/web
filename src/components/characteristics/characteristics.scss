@@ -4,3 +4,24 @@
   margin: 2rem 1rem 1rem 1rem;
   border-radius: 16px !important;
 }
+
+.characteristic-container {
+  display: flex;
+  //flex-direction: row;
+  //justify-content: space-between;
+  gap: 10%;
+}
+
+.characteristic {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.char {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.charNumber {
+  display: inline-block;
+}

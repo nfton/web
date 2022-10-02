@@ -34,6 +34,8 @@ import App from "./App";
 import {initializeApp} from "firebase/app";
 import "firebase/firestore"
 import CheckroomPage from "./pages/Сheckroom";
+import Marketplace from "./pages/Marketplace";
+import MarketplacePage from "./pages/Marketplace";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyB1TpbBCEurdfA6jaJpms2SCJxPDKWuoX8",
@@ -65,6 +67,7 @@ root.render(
 								<Route path="/games" element={<GamesPage/>}/>
 								<Route path="/checkroom" element={<CheckroomPage/>}/>
 								<Route path="/games" element={<GamesPage/>}/>
+								<Route path="/marketplace" element={<MarketplacePage/>}/>
 							</Routes>
 						</div>
 						<Footer/>
