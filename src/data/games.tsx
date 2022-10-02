@@ -12,7 +12,6 @@ import mortalKombatMiniGame from '../images/games/mortal_kombat_mini_game.png'
 import tRexOnline from '../images/games/t_rex_online.png'
 import woodcutter from '../images/games/woodcutter.png'
 
-
 export const CHARACTERISTICS = {
 	[ECharacteristics.HEALTH]: {
 		color: '#F44336',
