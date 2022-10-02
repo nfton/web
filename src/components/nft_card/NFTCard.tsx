@@ -12,12 +12,13 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt'
 import './nft_card.scss'
 
 interface INFTCardProps extends INFT {
-	selected: boolean
+	selected: boolean,
+	marketplace?: boolean
 }
 
 const NFTCard: React.FC<INFTCardProps> = memo((props) => {
 	const { setNewFit, removeFit } = useAction()
-	const { selected, type, image, name, price, characteristics } = props
+	const { selected, type, image, name, price, characteristics, marketplace } = props
 
 	const handleCardClick = useCallback(() => {
 		if ( selected ) removeFit(type)
@@ -59,11 +60,10 @@ const NFTCard: React.FC<INFTCardProps> = memo((props) => {
 		</CardActions>
 		{ price! > 0 && <CardActions className="nft-card-price">
       <Chip
-        label={ price }
-        icon={ <LocalAtmIcon /> }
+		  label={ props.marketplace ? "buy" : "sell" }
         size="small"
         variant="outlined"
-        style={ { width: '100%' } }
+        style={ { width: '100%', backgroundColor: '#4CAF50' } }
       />
     </CardActions> }
 

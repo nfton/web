@@ -20,11 +20,84 @@ export const playerInitialState: IPlayerState = {
 	[EPlayerStateTypes.CHECKROOM]: {
 		[EAttributes.COLLAR]: [],
 		[EAttributes.CARDIGAN]: [],
-		[EAttributes.PANTS]: [],
+		[EAttributes.PANTS]: [
+			{
+				type: EAttributes.PANTS,
+				name: 'blue Pants',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.PANTS,
+				name: 'pink Pants',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+		],
 		[EAttributes.T_SHIRT]: [
 			{
 				type: EAttributes.T_SHIRT,
-				name: 'pink t-shirt',
+				name: 'pink T-shirt',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.T_SHIRT,
+				name: 'pink T-shirt',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.T_SHIRT,
+				name: 'Pink T-shirt',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.T_SHIRT,
+				name: 'pink T-shirt',
+				image: '',
+				characteristics: {
+					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 0,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.T_SHIRT,
+				name: 'pink T-shirt',
 				image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png',
 				characteristics: {
 					[ECharacteristics.HEALTH]: 1,

@@ -1,3 +1,52 @@
 .marketplace-container {
-  height: calc(100vh + 100px);
+  position: relative;
+  justify-content: center;
+
+  .search {
+    z-index: 2;
+    margin: 1rem 2rem;
+    position: relative;
+    .searchInput {
+      border-radius: 5px;
+    }
+  }
+
+  .pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    z-index: 1;
+
+    > svg {
+      fill: currentColor;
+      height: auto;
+      z-index: 1;
+    }
+  }
+
+  .value {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .all {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .cards {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    padding: 0.5rem;
+
+    max-width: 100%;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
 }

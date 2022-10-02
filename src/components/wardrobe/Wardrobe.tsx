@@ -26,6 +26,7 @@ export const Wardrobe: React.FC = memo(() => {
 	return <div style={divStyle} className="wardrobe-container">
 		<Box>
 			<Tabs
+				centered
 				value={value}
 				className="tabs"
 				onChange={handleChange}
@@ -41,12 +42,13 @@ export const Wardrobe: React.FC = memo(() => {
 			</Tabs>
 		</Box>
 		<div className="cards">
-			{ checkroom[value as EAttributes]?.map((item) =>
+			{ checkroom[value as EAttributes]?.map((item) => (
 				<NFTCard
 					{ ...item}
 					key={nextId('wardrobe-card-')}
 					selected={ item.image === currentFit[value as EAttributes]?.image }
 				/>
+				)
 			)
 			}
 		</div>

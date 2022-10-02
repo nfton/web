@@ -4,6 +4,10 @@
 .wardrobe-container .cards {
   display: flex;
   margin: 5px;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=wardrobe.css.map */
