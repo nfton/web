@@ -40,4 +40,35 @@
   height: 24px;
 }
 
+.converting-window {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 30px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.converting-window .converting-window__coin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.converting-window .converting-window__coin .converting-window__coin__icon {
+  margin-left: 1rem;
+}
+.converting-window .converting-window__coin .converting-window__coin__icon .icon {
+  width: 35px;
+  height: 35px;
+}
+.converting-window .converting-window__coin:last-of-type {
+  margin-bottom: 2rem;
+}
+.converting-window .converting-window__arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  margin-right: 5px;
+}
+
 /*# sourceMappingURL=header.css.map */
