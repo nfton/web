@@ -8,14 +8,9 @@
     ],
     "rewrites": [
       {
-        "source": "/colors/*",
-        "destination": "/colors/index.html"
-      },
-      {
-        "source": "!**/*.@(html|css|js|png|jpg|jpeg|gif)",
+        "source": "!/*.@(html|css|js|png|jpg|jpeg|gif)",
         "destination": "/index.html"
       }
-
     ]
   }
 }

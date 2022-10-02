@@ -14,8 +14,10 @@ import {collection, getFirestore, onSnapshot} from "firebase/firestore"
 import {getId, calcChars} from "../utils";
 
 import './games.scss'
+import {useNavigation} from "react-router-dom";
 
 const GamesPage: React.FC = memo(() => {
+	const {navigate} = useNavigation()
 	const [modal, setModal] = useState(false)
 	const [game, setGame] = useState<IGame | null>(null)
 	const {level, currentFit} = useTypedSelector(state => state.player)
@@ -35,6 +37,7 @@ const GamesPage: React.FC = memo(() => {
 				console.log(e.data())
 				if (e.get("type") === game?.id) {
 					setJoining(2)
+					navigate('https://nfton.space/colors/?game=' + e.get('id'))
 				}
 			})
 		})

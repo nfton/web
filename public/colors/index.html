@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Colors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+    <div v-if="!isStarted">
+        <h1>Click <span class="color">the color</span><br>not <span class="word">the word</span></h1>
+        <h2 v-if="started === 0">Waiting for the opponent</h2>
+
+        <button class="ready" v-if="!me.ready" @click="ready">Ready</button>
+        <button class="ready" v-if="me.ready && !opponent.ready">Wait</button>
+        <button class="ready" v-if="me.ready && opponent.ready">{{ countdown }}</button>
+    </div>
+    <div v-if="isStarted && !over">
+        <div class="question" :style="{color: active.q.f}">
+            {{ active.q.s }}
+        </div>
+        <div class="counter">{{ countdown }}</div>
+        <div class="choices">
+            <div class="choice" v-for="i of active.c" :style="{color: 'black'}" @click="() => select(i.s)">{{
+                    i.s
+                }}
+            </div>
+        </div>
+    </div>
+    <div v-if="over">
+        <h1>Game Over</h1>
+        <h2>Your score: {{ result }} points</h2>
+    </div>
+</main>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="./main.js" type="module"></script>
+</body>
+</html>
