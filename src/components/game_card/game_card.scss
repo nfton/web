@@ -61,7 +61,6 @@
 
   .modal-image {
     width: 100%;
-
   }
 
   .close-button {
@@ -78,4 +77,13 @@
     justify-content: space-around;
   }
 
+  .modal-button-container {
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 10px 0 20px;
+
+    }
+  }
 }

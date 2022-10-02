@@ -4,25 +4,35 @@ import {GameCard} from '../components'
 import {CHARACTERISTICS, GAMES} from '../data'
 
 import './games.scss'
-import {Chip, Modal, Paper} from "@mui/material";
+import {Button, Chip, Modal, Paper} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {ECharacteristics, IGame} from "../types";
 import {useTypedSelector} from "../hooks";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import DoneIcon from "@mui/icons-material/Done";
+import {LoadingButton} from '@mui/lab';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+
 
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
 	const [game, setGame] = useState<IGame | null>(null)
 	const {level, additional} = useTypedSelector(state => state.player)
+	const [joining, setJoining] = useState(0)
 	const openModal = (id: string) => {
 		setModal(true)
 		setGame(GAMES.filter(g => g.id === id)[0])
 	}
 	const handleClose = () => {
 		setModal(false)
+		setJoining(0)
 	}
-	useEffect(() => {
-		console.log(modal)
-	}, [modal])
+	const joinWaitRoom = async () => {
+		setJoining(1)
+		const functions = getFunctions();
+		httpsCallable(functions, "joinWaitList")
+
+	}
 	return (
 		<div className="games-container">
 			<span className="page-heading" style={{color: theme.palette.text.primary}}>Games</span>
@@ -53,8 +63,13 @@ const GamesPage: React.FC = memo(() => {
 							<div className="modal-characteristics">
 								{game.characteristics.map(e =>
 									<Chip key={e.toString()} icon={CHARACTERISTICS[e as ECharacteristics].icon} variant="outlined"
-									      label={ + (level + additional[e as ECharacteristics])}
+									      label={(level + additional[e as ECharacteristics])}
 									      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}
+							</div>
+							<div className="modal-button-container">
+								{joining <= 1 ? <LoadingButton loading={joining === 1} endIcon={<LocalAtmIcon/>} variant="contained"
+								                               onClick={joinWaitRoom}>Play50</LoadingButton> :
+									<Button endIcon={<DoneIcon/>} variant="contained"/>}
 							</div>
 						</Paper>}
 				</div>
