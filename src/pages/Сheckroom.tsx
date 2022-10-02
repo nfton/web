@@ -1,6 +1,5 @@
-import React, {memo} from "react";
-import {Dog} from "../components";
-import {Wardrobe} from "../components/wardrobe/Wardrobe";
+import React, { memo } from 'react'
+import { Dog, Wardrobe } from '../components'
 
 const CheckroomPage: React.FC = memo(() => {
 	return (
@@ -10,6 +9,5 @@ const CheckroomPage: React.FC = memo(() => {
 		</div>
 	)
 })
-
 
 export default CheckroomPage

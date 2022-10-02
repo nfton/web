@@ -6,6 +6,7 @@ import {Dispatch} from 'react'
 import {ECoinsActionTypes, TCoinsActions} from '../../types'
 import {getFirestore, doc, collection, getDoc} from "firebase/firestore"
 import {RawBlockchainApi} from "tonapi-sdk-js";
+
 //----------------------------------------------------------------------------------------------------------------------
 // Switch Current Coin Action
 //----------------------------------------------------------------------------------------------------------------------
@@ -17,6 +18,11 @@ export const switchCurrentCoin = () => {
 		})
 	}
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+// Load Balance Action
+//----------------------------------------------------------------------------------------------------------------------
+
 export const loadBalances = () => {
 	return async (dispatch: Dispatch<TCoinsActions>) => {
 		let id = "null"

@@ -2,11 +2,13 @@
 // Player Reducer State Types Enum
 //----------------------------------------------------------------------------------------------------------------------
 
-import {ICharacteristics} from "../default";
+import { EAttributes, ICharacteristics, INFT } from '../default'
 
 export enum EPlayerStateTypes {
 	LEVEL = 'level',
-	ADDITIONAL = 'additional'
+	ADDITIONAL = 'additional',
+	CURRENT_FIT = 'currentFit',
+	CHECKROOM = 'checkroom'
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -16,4 +18,16 @@ export enum EPlayerStateTypes {
 export interface IPlayerState {
 	[EPlayerStateTypes.LEVEL]: number,
 	[EPlayerStateTypes.ADDITIONAL]: ICharacteristics,
+	[EPlayerStateTypes.CHECKROOM]: {
+		[EAttributes.COLLAR]?: INFT[],
+		[EAttributes.CARDIGAN]?: INFT[],
+		[EAttributes.PANTS]?: INFT[],
+		[EAttributes.T_SHIRT]?: INFT[],
+	},
+	[EPlayerStateTypes.CURRENT_FIT]: {
+		[EAttributes.COLLAR]?: INFT,
+		[EAttributes.CARDIGAN]?: INFT,
+		[EAttributes.PANTS]?: INFT,
+		[EAttributes.T_SHIRT]?: INFT,
+	},
 }

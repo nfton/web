@@ -1,5 +1,10 @@
 .wardrobe-container {
-  > .cards {
+
+  .tabs {
+    margin-bottom: 1rem;
+  }
+
+  .cards {
     display: flex;
     margin: 5px;
   }
