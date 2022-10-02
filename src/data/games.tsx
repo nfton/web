@@ -45,41 +45,47 @@ export const GAMES: IGame[] = [
 		name: 'Road Rash',
 		image: roadRash,
 		players: 2,
-		characteristics: [ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.SPEED],
+		enabled: false,
 	},
 	{
 		id: 'master_chess',
 		name: 'Master Chess',
 		image: masterChess,
 		players: 2,
-		characteristics: [ECharacteristics.TIME]
+		characteristics: [ECharacteristics.TIME],
+		enabled: false,
 	},
 	{
 		id: 'COLORS',
 		name: 'Colored Words',
 		image: coloredWords,
 		players: 2,
-		characteristics: [ECharacteristics.TIME, ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.TIME, ECharacteristics.SPEED],
+		enabled: true,
 	},
 	{
 		id: 'mortal_kombat_mini_game',
 		name: 'Mortal Kombat Mini Game',
 		image: mortalKombatMiniGame,
 		players: 2,
-		characteristics: [ECharacteristics.STRENGTH, ECharacteristics.HEALTH]
+		characteristics: [ECharacteristics.STRENGTH, ECharacteristics.HEALTH],
+		enabled: false,
 	},
 	{
 		id: 't_rex_online',
 		name: 'T-Rex Online',
 		image: tRexOnline,
 		players: 1,
-		characteristics: [ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.SPEED],
+		enabled: false,
 	},
 	{
 		id: 'woodcutter',
 		name: 'Woodcutter',
 		image: woodcutter,
 		players: 1,
-		characteristics: [ECharacteristics.STRENGTH]
+		characteristics: [ECharacteristics.STRENGTH],
+		enabled: false,
 	}
 ]
