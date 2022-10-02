@@ -90,10 +90,12 @@ const GamesPage: React.FC = memo(() => {
 									/>)}
 							</div>
 							<div className="modal-button-container">
-								{joining <= 1 ?
+								{ game.enabled
+									? (joining <= 1 ?
 									<LoadingButton color="primary" loading={joining === 1} endIcon={<LocalAtmIcon/>} variant="contained"
 									               onClick={joinWaitRoom}>Play 50</LoadingButton> :
-									<Button color="primary" variant="outlined">Starting game...</Button>}
+									<Button color="primary" variant="outlined">Starting game...</Button>)
+									: <Button disabled variant="outlined">Coming soon</Button> }
 							</div>
 						</Paper>}
 				</div>
