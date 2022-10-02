@@ -12,7 +12,7 @@ import {useTypedSelector} from "../hooks";
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
 	const [game, setGame] = useState<IGame | null>(null)
-	const {level, additional} = useTypedSelector(state => state.player)
+	const {level} = useTypedSelector(state => state.player)
 	const openModal = (id: string) => {
 		setModal(true)
 		setGame(GAMES.filter(g => g.id === id)[0])
@@ -51,10 +51,10 @@ const GamesPage: React.FC = memo(() => {
 							<img src={game.image} alt={game.name} className={"modal-image"}/>
 							<h3>Enabled characteristics</h3>
 							<div className="modal-characteristics">
-								{game.characteristics.map(e =>
-									<Chip key={e.toString()} icon={CHARACTERISTICS[e as ECharacteristics].icon} variant="outlined"
-									      label={ + (level + additional[e as ECharacteristics])}
-									      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}
+								{/*{game.characteristics.map(e =>*/}
+								{/*	<Chip key={e.toString()} icon={CHARACTERISTICS[e as ECharacteristics].icon} variant="outlined"*/}
+								{/*	      label={ + (level + additional[e as ECharacteristics])}*/}
+								{/*	      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}*/}
 							</div>
 						</Paper>}
 				</div>

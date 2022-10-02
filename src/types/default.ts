@@ -56,3 +56,10 @@ export interface INFT {
 	characteristics: ICharacteristics,
 	price?: number
 }
+
+export interface IFit {
+	[EAttributes.COLLAR]?: INFT,
+	[EAttributes.CARDIGAN]?: INFT,
+	[EAttributes.PANTS]?: INFT,
+	[EAttributes.T_SHIRT]?: INFT,
+}

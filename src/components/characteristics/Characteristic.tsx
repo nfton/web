@@ -1,31 +1,30 @@
-import React, {memo} from "react";
-import {Box, LinearProgress, Typography} from "@mui/material";
+import React, { memo } from 'react'
+import { Box, Typography } from '@mui/material'
 import './characteristics.scss'
-import {CHARACTERISTICS} from "../../data";
-import {ECharacteristics} from "../../types";
+import { CHARACTERISTICS } from '../../data'
 
 interface CharacteristicProps {
-	char: typeof CHARACTERISTICS[ECharacteristics.TIME];
-	charValue: number;
-	additionalValue: number
+	char: typeof CHARACTERISTICS[keyof typeof CHARACTERISTICS],
+	playerLevel: number,
+	charsValue: number
 }
 
 export const Characteristic: React.FC<CharacteristicProps> = memo(({
-	                                                                   char,
-	                                                                   charValue,
-	                                                                   additionalValue
-                                                                   }: CharacteristicProps) => {
+	char,
+	playerLevel,
+	charsValue
+}: CharacteristicProps) => {
 	return (
 		<div className="characteristic-container">
 			<div className="characteristic">
-				<div style={{color: char.color}} className="char" key={char.title}>
-					{char.icon}
+				<div style={ { color: char.color } } className="char" key={ char.title }>
+					{ char.icon }
 				</div>
-				<Box sx={{width: '100%'}}>
+				<Box sx={ { width: '100%' } }>
 					<Typography variant="caption" display="block" gutterBottom>
-						{char.title}
+						{ char.title }
 					</Typography>
-					<h4>{charValue + additionalValue}</h4>
+					<h4>{ playerLevel + charsValue }</h4>
 				</Box>
 			</div>
 		</div>

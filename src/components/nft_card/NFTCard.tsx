@@ -19,6 +19,7 @@ const NFTCard: React.FC<INFT & { key: string, selected: boolean }> = memo((props
 			width="100"
 			image={ props.image }
 			alt={ props.type }
+			data-card-selected={props.selected}
 		/>
 		<div className="nft-card-name"><strong>{ props.name }</strong></div>
 		<CardActions className="nft-card-actions">
