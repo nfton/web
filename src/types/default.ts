@@ -46,6 +46,7 @@ export interface IGame {
 	image: string,
 	name: string
 	players: number,
+	enabled: boolean,
 }
 
 

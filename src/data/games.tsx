@@ -14,21 +14,25 @@ import woodcutter from '../images/games/woodcutter.png'
 
 export const CHARACTERISTICS = {
 	[ECharacteristics.HEALTH]: {
+		key: ECharacteristics.HEALTH,
 		color: '#F44336',
 		icon: <FavoriteIcon color='inherit' style={{color: '#F44336'}}/>,
 		title: "Health"
 	},
 	[ECharacteristics.TIME]: {
+		key: ECharacteristics.TIME,
 		color: '#4CAF50',
 		icon: <TimerIcon color='inherit' style={{color: '#4CAF50'}}/>,
 		title: "Time",
 	},
 	[ECharacteristics.SPEED]: {
+		key: ECharacteristics.SPEED,
 		color: '#3F51B5',
 		icon: <SpeedIcon color='inherit' style={{color: '#3F51B5'}}/>,
 		title: "Speed",
 	},
 	[ECharacteristics.STRENGTH]: {
+		key: ECharacteristics.STRENGTH,
 		color: '#ce8f00',
 		icon: <FitnessCenterIcon color='inherit' style={{color: '#ce8f00'}}/>,
 		title: "Strength",
@@ -41,41 +45,47 @@ export const GAMES: IGame[] = [
 		name: 'Road Rash',
 		image: roadRash,
 		players: 2,
-		characteristics: [ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.SPEED],
+		enabled: false,
 	},
 	{
 		id: 'master_chess',
 		name: 'Master Chess',
 		image: masterChess,
 		players: 2,
-		characteristics: [ECharacteristics.TIME]
+		characteristics: [ECharacteristics.TIME],
+		enabled: false,
 	},
 	{
 		id: 'COLORS',
 		name: 'Colored Words',
 		image: coloredWords,
 		players: 2,
-		characteristics: [ECharacteristics.TIME, ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.TIME, ECharacteristics.SPEED],
+		enabled: true,
 	},
 	{
 		id: 'mortal_kombat_mini_game',
 		name: 'Mortal Kombat Mini Game',
 		image: mortalKombatMiniGame,
 		players: 2,
-		characteristics: [ECharacteristics.STRENGTH, ECharacteristics.HEALTH]
+		characteristics: [ECharacteristics.STRENGTH, ECharacteristics.HEALTH],
+		enabled: false,
 	},
 	{
 		id: 't_rex_online',
 		name: 'T-Rex Online',
 		image: tRexOnline,
 		players: 1,
-		characteristics: [ECharacteristics.SPEED]
+		characteristics: [ECharacteristics.SPEED],
+		enabled: false,
 	},
 	{
 		id: 'woodcutter',
 		name: 'Woodcutter',
 		image: woodcutter,
 		players: 1,
-		characteristics: [ECharacteristics.STRENGTH]
+		characteristics: [ECharacteristics.STRENGTH],
+		enabled: false,
 	}
 ]

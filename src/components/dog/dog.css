@@ -24,19 +24,65 @@
   height: 100%;
   z-index: 2;
 }
-.dog .d-dog .image {
+.dog .d-dog .image-container {
+  position: relative;
   display: flex;
   height: 85%;
   margin-bottom: 5%;
 }
-.dog .d-dog .imageCheckroom {
+.dog .d-dog .image-container .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.dog .d-dog .image-container .d-dog__fit {
   position: absolute;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item,
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand {
+  position: absolute;
+  width: 100%;
   height: 100%;
 }
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item .attribute,
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand .attribute {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item.d-dog__fit__item--collar,
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand.d-dog__fit__item--collar {
+  z-index: 3;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item.d-dog__fit__item--top,
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand.d-dog__fit__item--top {
+  z-index: 2;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item.d-dog__fit__item--bottom,
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand.d-dog__fit__item--bottom {
+  width: 50%;
+  height: 50%;
+  bottom: -3%;
+  left: 25%;
+  z-index: 1;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__item {
+  z-index: 1;
+}
+.dog .d-dog .image-container .d-dog__fit .d-dog__fit__hand {
+  z-index: 2;
+}
+.dog .d-dog.d-dog--checkroom {
+  justify-content: space-between;
+}
+.dog .d-dog.d-dog--checkroom .image-container {
+  height: 90%;
+}
 .dog .d-dog .characteristics {
-  position: absolute;
-  right: 0;
   height: 100%;
   width: 50%;
 }

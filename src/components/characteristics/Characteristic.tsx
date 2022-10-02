@@ -3,17 +3,15 @@ import { Box, Typography } from '@mui/material'
 import './characteristics.scss'
 import { CHARACTERISTICS } from '../../data'
 
-interface CharacteristicProps {
+interface ICharacteristicProps {
 	char: typeof CHARACTERISTICS[keyof typeof CHARACTERISTICS],
-	playerLevel: number,
 	charsValue: number
 }
 
-export const Characteristic: React.FC<CharacteristicProps> = memo(({
+export const Characteristic: React.FC<ICharacteristicProps> = memo(({
 	char,
-	playerLevel,
 	charsValue
-}: CharacteristicProps) => {
+}: ICharacteristicProps) => {
 	return (
 		<div className="characteristic-container">
 			<div className="characteristic">
@@ -24,7 +22,7 @@ export const Characteristic: React.FC<CharacteristicProps> = memo(({
 					<Typography variant="caption" display="block" gutterBottom>
 						{ char.title }
 					</Typography>
-					<h4>{ playerLevel + charsValue }</h4>
+					<h4>{ charsValue }</h4>
 				</Box>
 			</div>
 		</div>

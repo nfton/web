@@ -6,6 +6,7 @@ import {Dispatch} from 'react'
 import {ECoinsActionTypes, TCoinsActions} from '../../types'
 import {getFirestore, doc, collection, getDoc} from "firebase/firestore"
 import {RawBlockchainApi} from "tonapi-sdk-js";
+import { getId } from '../../utils'
 
 //----------------------------------------------------------------------------------------------------------------------
 // Switch Current Coin Action
@@ -46,16 +47,4 @@ export const loadBalances = () => {
 			payload: user.get("nts") || 0
 		})
 	}
-}
-
-
-export function getId(): string {
-	let id = "null"
-	try {
-		// @ts-ignore
-		id = window.Telegram.WebApp.initDataUnsafe.user.id.toString()
-	} catch (e) {
-		id = '418578633'
-	}
-	return id
 }

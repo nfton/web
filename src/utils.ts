@@ -1,4 +1,27 @@
+//----------------------------------------------------------------------------------------------------------------------
+// Imports
+//----------------------------------------------------------------------------------------------------------------------
+
 import { EAttributes, ECharacteristics, IFit } from './types'
+
+//----------------------------------------------------------------------------------------------------------------------
+// Get User ID Function
+//----------------------------------------------------------------------------------------------------------------------
+
+export function getId(): string {
+	let id = "null"
+	try {
+		// @ts-ignore
+		id = window.Telegram.WebApp.initDataUnsafe.user.id.toString()
+	} catch (e) {
+		id = '418578633'
+	}
+	return id
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Calc Summary Characteristics Function
+//----------------------------------------------------------------------------------------------------------------------
 
 export function calcChars(fit: IFit, level?: number) {
 	let result: { [key in ECharacteristics]: number } = Object.create({})
@@ -18,4 +41,20 @@ export function calcChars(fit: IFit, level?: number) {
 	}
 
 	return result
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// String prototype
+//----------------------------------------------------------------------------------------------------------------------
+
+declare global {
+	interface String {
+		toPascalCase(): string
+	}
+}
+
+String.prototype.toPascalCase = function() {
+	return this.replace(/(\w)(\w*)/g, function(g0, g1, g2) {
+		return g1.toUpperCase() + g2.toLowerCase()
+	})
 }
