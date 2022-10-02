@@ -18,13 +18,11 @@ import {
 export const playerInitialState: IPlayerState = {
 	[EPlayerStateTypes.LEVEL]: 1,
 	[EPlayerStateTypes.CHECKROOM]: {
-		[EAttributes.COLLAR]: [],
-		[EAttributes.CARDIGAN]: [],
-		[EAttributes.PANTS]: [
+		[EAttributes.COLLAR]: [
 			{
-				type: EAttributes.PANTS,
-				name: 'blue Pants',
-				image: '',
+				type: EAttributes.COLLAR,
+				name: 'yellow collar',
+				image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2000007/image.png',
 				characteristics: {
 					[ECharacteristics.HEALTH]: 1,
 					[ECharacteristics.SPEED]: 2,
@@ -34,64 +32,66 @@ export const playerInitialState: IPlayerState = {
 				price: 10
 			},
 			{
-				type: EAttributes.PANTS,
-				name: 'pink Pants',
-				image: '',
+				type: EAttributes.COLLAR,
+				name: 'black collar',
+				image: "https://s.getgems.io/nft/c/633846f13730a2edb21981a6/4/image.png",
 				characteristics: {
-					[ECharacteristics.HEALTH]: 1,
-					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.HEALTH]: 0,
+					[ECharacteristics.SPEED]: 1,
 					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 1,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.COLLAR,
+				name: 'green collar',
+				image: "https://s.getgems.io/nft/c/633846f13730a2edb21981a6/5/image.png",
+				characteristics: {
+					[ECharacteristics.HEALTH]: 2,
+					[ECharacteristics.SPEED]: 0,
+					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.TIME]: 1,
+				},
+				price: 10
+			},
+			{
+				type: EAttributes.COLLAR,
+				name: 'pink collar',
+				image: "https://s.getgems.io/nft/c/633846f13730a2edb21981a6/6/image.png",
+				characteristics: {
+					[ECharacteristics.HEALTH]: 0,
+					[ECharacteristics.SPEED]: 1,
+					[ECharacteristics.STRENGTH]: 1,
 					[ECharacteristics.TIME]: 0,
 				},
 				price: 10
 			},
 		],
+		[EAttributes.CARDIGAN]: [],
+		[EAttributes.PANTS]: [],
 		[EAttributes.T_SHIRT]: [
 			{
 				type: EAttributes.T_SHIRT,
-				name: 'pink T-shirt',
-				image: '',
+				name: 'yellow T-shirt',
+				image: "https://s.getgems.io/nft/c/633846f13730a2edb21981a6/1/image.png",
 				characteristics: {
-					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.HEALTH]: 0,
 					[ECharacteristics.SPEED]: 2,
-					[ECharacteristics.STRENGTH]: 0,
+					[ECharacteristics.STRENGTH]: 1,
 					[ECharacteristics.TIME]: 0,
 				},
 				price: 10
 			},
 			{
 				type: EAttributes.T_SHIRT,
-				name: 'pink T-shirt',
-				image: '',
+				name: 'green T-shirt',
+				image: "https://s.getgems.io/nft/c/633846f13730a2edb21981a6/3/image.png",
 				characteristics: {
 					[ECharacteristics.HEALTH]: 1,
-					[ECharacteristics.SPEED]: 2,
+					[ECharacteristics.SPEED]: 0,
 					[ECharacteristics.STRENGTH]: 0,
-					[ECharacteristics.TIME]: 0,
-				},
-				price: 10
-			},
-			{
-				type: EAttributes.T_SHIRT,
-				name: 'Pink T-shirt',
-				image: '',
-				characteristics: {
-					[ECharacteristics.HEALTH]: 1,
-					[ECharacteristics.SPEED]: 2,
-					[ECharacteristics.STRENGTH]: 0,
-					[ECharacteristics.TIME]: 0,
-				},
-				price: 10
-			},
-			{
-				type: EAttributes.T_SHIRT,
-				name: 'pink T-shirt',
-				image: '',
-				characteristics: {
-					[ECharacteristics.HEALTH]: 1,
-					[ECharacteristics.SPEED]: 2,
-					[ECharacteristics.STRENGTH]: 0,
-					[ECharacteristics.TIME]: 0,
+					[ECharacteristics.TIME]: 2,
 				},
 				price: 10
 			},
@@ -100,7 +100,7 @@ export const playerInitialState: IPlayerState = {
 				name: 'pink T-shirt',
 				image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png',
 				characteristics: {
-					[ECharacteristics.HEALTH]: 1,
+					[ECharacteristics.HEALTH]: 2,
 					[ECharacteristics.SPEED]: 2,
 					[ECharacteristics.STRENGTH]: 0,
 					[ECharacteristics.TIME]: 0,
