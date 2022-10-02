@@ -1,13 +1,15 @@
-import './wardrobe.scss'
-import React, {CSSProperties, memo} from "react";
-import {theme} from "../../themes";
-import {Box, Tab, Tabs} from "@mui/material";
-import {EAttributes, ECharacteristics} from "../../types";
-import NFTCard from "../nft_card/NFTCard";
+import React, { CSSProperties, memo } from 'react'
+import nextId from 'react-id-generator'
+import { Box, Tab, Tabs } from '@mui/material'
+import { useTypedSelector, useWindowDimensions } from '../../hooks'
+import { EAttributes } from '../../types'
+import { theme } from '../../themes'
+import NFTCard from '../nft_card/NFTCard'
 
-import {useWindowDimensions} from "../../hooks";
+import './wardrobe.scss'
 
 export const Wardrobe: React.FC = memo(() => {
+	const { checkroom, currentFit } = useTypedSelector(state => state.player)
 	const {height} = useWindowDimensions()
 
 	const divStyle: CSSProperties = {
@@ -22,30 +24,31 @@ export const Wardrobe: React.FC = memo(() => {
 	};
 
 	return <div style={divStyle} className="wardrobe-container">
-		<Box sx={{width: '100%'}}>
+		<Box>
 			<Tabs
 				value={value}
+				className="tabs"
 				onChange={handleChange}
 				textColor="secondary"
 				indicatorColor="secondary"
-				aria-label="tabs"
+				variant="scrollable"
+				scrollButtons={ false }
+				aria-label="scrollable auto tabs example"
 			>
-				<Tab key="cardigan" value="cardigan" label={EAttributes.CARDIGAN}/>
-				<Tab key="collar" value="collar" label={EAttributes.COLLAR}/>
-				<Tab key="pants" value="pants" label={EAttributes.PANTS}/>
-				<Tab key="t-shirt" value="t-shirt" label={EAttributes.T_SHIRT}/>
+				{ Object.values(EAttributes).map((item) =>
+					<Tab key={ item } value={ item } label={ item } />
+				) }
 			</Tabs>
 		</Box>
 		<div className="cards">
-			<NFTCard type={EAttributes.CARDIGAN} name='pink t-shirt'
-			         image={"https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png"}
-			         characteristics={{
-				         [ECharacteristics.HEALTH]: 5,
-				         [ECharacteristics.SPEED]: 2,
-				         [ECharacteristics.STRENGTH]: 0,
-				         [ECharacteristics.TIME]: 0,
-			         }} price={100}/>
+			{ checkroom[value as EAttributes]?.map((item) =>
+				<NFTCard
+					{ ...item}
+					key={nextId('wardrobe-card-')}
+					selected={ item.image === currentFit[value as EAttributes]?.image }
+				/>
+			)
+			}
 		</div>
-
 	</div>
 })

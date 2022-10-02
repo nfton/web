@@ -27,7 +27,7 @@ export enum ECharacteristics {
 
 export enum EAttributes {
 	CARDIGAN = 'cardigan',
-	T_SHIRT = 't-shirt',
+	T_SHIRT = 'tShirt',
 	PANTS = 'pants',
 	COLLAR = 'collar',
 }
@@ -49,10 +49,10 @@ export interface IGame {
 }
 
 
-export interface INFTCard {
+export interface INFT {
 	type: EAttributes
-	name: string
-	image: string
-	characteristics: ICharacteristics
+	name: string,
+	image: string,
+	characteristics: ICharacteristics,
 	price?: number
 }
