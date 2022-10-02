@@ -14,7 +14,7 @@ export function getId(): string {
 		// @ts-ignore
 		id = window.Telegram.WebApp.initDataUnsafe.user.id.toString()
 	} catch (e) {
-		id = '418578633'
+		id = '346724642'
 	}
 	return id
 }
