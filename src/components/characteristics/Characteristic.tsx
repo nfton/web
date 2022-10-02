@@ -25,7 +25,7 @@ export const Characteristic: React.FC<CharacteristicProps> = memo(({
 					<Typography variant="caption" display="block" gutterBottom>
 						{char.title}
 					</Typography>
-					<h5>{charValue + additionalValue}</h5>
+					<h4>{charValue + additionalValue}</h4>
 				</Box>
 			</div>
 		</div>
