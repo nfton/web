@@ -21,7 +21,7 @@ export const Characteristics: React.FC = memo(() => {
 			<CardContent sx={{minHeight: "100%", backgroundColor: theme.palette.background.default}}>
 				<h4>Level {level}</h4>
 				{Object.values(CHARACTERISTICS).map((char) =>
-					<Characteristic key={nextId('char-in-room-')} char={char} playerLevel={ level } charsValue={sumChars[char.key]}/>
+					<Characteristic key={nextId('char-in-room-')} char={char} charsValue={sumChars[char.key]}/>
 				)}
 			</CardContent>
 		</Card>
