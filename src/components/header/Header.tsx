@@ -65,7 +65,7 @@ export const Header: React.FC = memo(() => {
 					onClick={ switchCurrentCoin }
 					endIcon={ currentCoin === ECoins.TON ? iconTon : <LocalAtmIcon className="icon" fontSize='large' /> }
 				>
-					{ currentCoin === ECoins.TON ? tonAmount.toFixed(2) : gameAmount }
+					{ currentCoin === ECoins.TON ? tonAmount.toFixed(2) : gameAmount.toLocaleString() }
 				</Button>
 				</div>
 			</Toolbar>

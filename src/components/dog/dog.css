@@ -29,5 +29,16 @@
   height: 85%;
   margin-bottom: 5%;
 }
+.dog .d-dog .imageCheckroom {
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+.dog .d-dog .characteristics {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 50%;
+}
 
 /*# sourceMappingURL=dog.css.map */

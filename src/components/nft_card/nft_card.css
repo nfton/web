@@ -1,0 +1,27 @@
+.nft-card {
+  padding: 0;
+  border-radius: 15px !important;
+  height: auto;
+  width: 120px;
+}
+.nft-card .nft-card-name {
+  text-align: center;
+  width: 100%;
+}
+.nft-card .nft-card-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.nft-card .nft-card-actions > div {
+  width: 50%;
+}
+.nft-card .nft-card-price {
+  padding-top: 0;
+}
+.nft-card img {
+  margin-top: -15px;
+}
+
+/*# sourceMappingURL=nft_card.css.map */

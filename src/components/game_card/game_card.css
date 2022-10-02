@@ -30,12 +30,37 @@
   justify-content: center;
   width: 20px;
   height: 20px;
+  margin-left: 5px;
 }
 .game-card .game-card__footer .characteristics .characteristic *:not(:last-child) {
   margin-right: 8px;
 }
 .game-card .game-card__footer .name {
   font-weight: 700;
+}
+
+.game-card-modal h2, .game-card-modal h3 {
+  text-align: center;
+  margin: 10px;
+}
+.game-card-modal .modal-paper {
+  margin: 50px 30px;
+  padding: 1px;
+}
+.game-card-modal .modal-image {
+  width: 100%;
+}
+.game-card-modal .close-button {
+  position: absolute;
+  top: 62px;
+  right: 40px;
+}
+.game-card-modal .modal-characteristics {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 10px 10px;
+  justify-content: space-around;
 }
 
 /*# sourceMappingURL=game_card.css.map */

@@ -1,0 +1,39 @@
+.card {
+  max-width: 80%;
+  height: 80%;
+  margin: 2rem 1rem 1rem 1rem;
+  border-radius: 16px !important;
+}
+.card h4 {
+  margin: 0 5px 5px;
+}
+
+.characteristic-container {
+  display: flex;
+  gap: 10%;
+}
+
+.characteristic {
+  display: flex;
+  flex: 1 1 auto;
+}
+.characteristic span {
+  margin: 0;
+}
+.characteristic h {
+  margin: 0;
+}
+
+.char {
+  margin-right: 1rem;
+  display: inline-block;
+}
+.char svg {
+  font-size: 2.4em;
+}
+
+.charNumber {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=characteristics.css.map */
