@@ -51,7 +51,7 @@ export const GAMES: IGame[] = [
 		characteristics: [ECharacteristics.TIME]
 	},
 	{
-		id: 'colored_words',
+		id: 'COLORS',
 		name: 'Colored Words',
 		image: coloredWords,
 		players: 2,

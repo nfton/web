@@ -1,18 +1,19 @@
-import React, {memo, useEffect, useState} from 'react'
-import {theme} from '../themes'
-import {GameCard} from '../components'
-import {CHARACTERISTICS, GAMES} from '../data'
-
 import './games.scss'
-import {Button, Chip, Modal, Paper} from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import {ECharacteristics, IGame} from "../types";
-import {useTypedSelector} from "../hooks";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
-import DoneIcon from "@mui/icons-material/Done";
+import {theme} from '../themes'
+import {getApp} from "firebase/app"
 import {LoadingButton} from '@mui/lab';
-import { getFunctions, httpsCallable } from 'firebase/functions';
-
+import {GameCard} from '../components'
+import {useTypedSelector} from "../hooks";
+import {getId} from '../store/action_creators'
+import {CHARACTERISTICS, GAMES} from '../data'
+import DoneIcon from "@mui/icons-material/Done";
+import {ECharacteristics, IGame} from "../types";
+import CloseIcon from "@mui/icons-material/Close";
+import React, {memo, useEffect, useState} from 'react'
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import {Button, Chip, Modal, Paper} from "@mui/material";
+import {getFunctions, httpsCallable} from 'firebase/functions';
+import {collection, getFirestore, onSnapshot} from "firebase/firestore"
 
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
@@ -29,8 +30,24 @@ const GamesPage: React.FC = memo(() => {
 	}
 	const joinWaitRoom = async () => {
 		setJoining(1)
-		const functions = getFunctions();
-		httpsCallable(functions, "joinWaitList")
+		onSnapshot(collection(getFirestore(), "users", getId(), "games"), async (snapshot) => {
+			snapshot.forEach(e => {
+				console.log(e.data())
+				if (e.get("type") === game?.id) {
+					setJoining(2)
+				}
+			})
+		})
+		const functions = getFunctions(getApp(), "europe-west3");
+		let func = httpsCallable(functions, "joinWaitRoom")
+		let result = await func({
+			player: {id: getId(), ability: {health: 1, speed: 2, time: 3, strength: 4}},
+			type: game?.id.toUpperCase()
+		})
+		console.log(result)
+		if (!result.data) {
+			setJoining(0)
+		}
 
 	}
 	return (
@@ -67,9 +84,10 @@ const GamesPage: React.FC = memo(() => {
 									      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}
 							</div>
 							<div className="modal-button-container">
-								{joining <= 1 ? <LoadingButton loading={joining === 1} endIcon={<LocalAtmIcon/>} variant="contained"
-								                               onClick={joinWaitRoom}>Play50</LoadingButton> :
-									<Button endIcon={<DoneIcon/>} variant="contained"/>}
+								{joining <= 1 ?
+									<LoadingButton color="primary" loading={joining === 1} endIcon={<LocalAtmIcon/>} variant="contained"
+									               onClick={joinWaitRoom}>Play 50</LoadingButton> :
+									<Button color="primary" variant="outlined">Starting game...</Button>}
 							</div>
 						</Paper>}
 				</div>
@@ -78,3 +96,4 @@ const GamesPage: React.FC = memo(() => {
 })
 
 export default GamesPage
+
