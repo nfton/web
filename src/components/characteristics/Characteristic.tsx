@@ -3,15 +3,15 @@ import { Box, Typography } from '@mui/material'
 import './characteristics.scss'
 import { CHARACTERISTICS } from '../../data'
 
-interface CharacteristicProps {
+interface ICharacteristicProps {
 	char: typeof CHARACTERISTICS[keyof typeof CHARACTERISTICS],
 	charsValue: number
 }
 
-export const Characteristic: React.FC<CharacteristicProps> = memo(({
+export const Characteristic: React.FC<ICharacteristicProps> = memo(({
 	char,
 	charsValue
-}: CharacteristicProps) => {
+}: ICharacteristicProps) => {
 	return (
 		<div className="characteristic-container">
 			<div className="characteristic">

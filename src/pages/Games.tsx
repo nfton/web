@@ -14,6 +14,8 @@ import {getFunctions, httpsCallable} from 'firebase/functions';
 import {collection, getFirestore, onSnapshot} from "firebase/firestore"
 import {getId, calcChars} from "../utils";
 
+import './games.scss'
+
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
 	const [game, setGame] = useState<IGame | null>(null)
@@ -78,9 +80,14 @@ const GamesPage: React.FC = memo(() => {
 							<h3>Enabled characteristics</h3>
 							<div className="modal-characteristics">
 								{game.characteristics.map(e =>
-									<Chip key={e.toString()} icon={CHARACTERISTICS[e as ECharacteristics].icon} variant="outlined"
-									      label={(level + calcChars(currentFit, level)[e as ECharacteristics])}
-									      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}
+									<Chip
+										className="modal-characteristics__item"
+										key={e.toString()}
+										icon={CHARACTERISTICS[e as ECharacteristics].icon}
+										variant="outlined"
+										label={(level + calcChars(currentFit, level)[e as ECharacteristics])}
+										style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}
+									/>)}
 							</div>
 							<div className="modal-button-container">
 								{joining <= 1 ?

@@ -42,3 +42,19 @@ export function calcChars(fit: IFit, level?: number) {
 
 	return result
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+// String prototype
+//----------------------------------------------------------------------------------------------------------------------
+
+declare global {
+	interface String {
+		toPascalCase(): string
+	}
+}
+
+String.prototype.toPascalCase = function() {
+	return this.replace(/(\w)(\w*)/g, function(g0, g1, g2) {
+		return g1.toUpperCase() + g2.toLowerCase()
+	})
+}
