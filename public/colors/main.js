@@ -39,7 +39,7 @@ createApp({
 					clearInterval(interval)
 					this.$data.isStarted = true
 					this.start(0)
-					this.$data.countdown = 5 + this.$data.me.ability.time
+					this.$data.countdown = 20 + this.$data.me.ability.time
 					this.$data.ended = Date.now() + this.$data.countdown * 1000
 					let stop = setInterval(() => {
 						this.$data.countdown = ((this.$data.ended - Date.now()) / 1000).toFixed(1)
@@ -58,12 +58,13 @@ createApp({
 			game: {},
 			me: {},
 			ended: 0,
-			id: window.Telegram.WebApp.initDataUnsafe.user.id || '346724642',
+			id: getId(),
 			game_id: null,
 			opponent: {},
 			started: 0,
 			countdown: 5,
-			isStarted: false, activeSlide: -1,
+			isStarted: false,
+			activeSlide: -1,
 			active: {},
 			result: 0,
 			over: false
@@ -71,14 +72,13 @@ createApp({
 	}, methods: {
 		updateGame(doc) {
 			console.log(doc.data())
-			if (doc.data().players.filter(p => p.id === this.$data.id).length === 0) {
-				alert('ERROR')
+			if (doc.data().players.filter(p => p.id == this.$data.id).length === 0) {
 				return;
 			}
 			this.$data.game = doc.data()
-			this.$data.me = doc.data().players.filter(p => p.id === this.$data.id)[0]
+			this.$data.me = doc.data().players.filter(p => p.id == this.$data.id)[0]
 			this.$data.opponent = doc.data().players.filter(p => p.id !== this.$data.id)[0]
-			if (this.$data.me.ready && this.$data.opponent.ready && this.$data.started === 0) {
+			if (this.$data.me.ready && this.$data.opponent.ready && this.$data.started == 0) {
 				this.$data.started = Date.now() + 2000
 			}
 		}, start(i) {
@@ -143,4 +143,11 @@ function shuffle(array) {
 	}
 
 	return array;
+}
+
+
+function getId() {
+	let id = "null"
+	id = window.Telegram.WebApp.initDataUnsafe.user.id
+	return id
 }

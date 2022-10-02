@@ -32,7 +32,6 @@
 }
 .dog .d-dog .image-container .image {
   height: 100%;
-  width: 100%;
   object-fit: cover;
 }
 .dog .d-dog .image-container .d-dog__fit {
