@@ -51,6 +51,7 @@ export interface IGame {
 
 export interface INFTCard {
 	type: EAttributes
+	name: string
 	image: string
 	characteristics: ICharacteristics
 	price?: number

@@ -37,7 +37,7 @@ export const Wardrobe: React.FC = memo(() => {
 			</Tabs>
 		</Box>
 		<div className="cards">
-			<NFTCard type={EAttributes.CARDIGAN} image={"https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png"}
+			<NFTCard type={EAttributes.CARDIGAN} name='pink t-shirt' image={"https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png"}
 			         characteristics={{
 				         [ECharacteristics.HEALTH]: 5,
 				         [ECharacteristics.SPEED]: 2,

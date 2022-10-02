@@ -4,6 +4,11 @@
   height: auto;
   width: 120px;
 
+  .nft-card-name {
+    text-align: center;
+    width: 100%;
+  }
+
   .nft-card-actions {
     display: flex;
     flex-direction: row;

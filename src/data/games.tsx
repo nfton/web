@@ -55,7 +55,7 @@ export const GAMES: IGame[] = [
 		id: 'colored_words',
 		name: 'Colored Words',
 		image: coloredWords,
-		players: 1,
+		players: 2,
 		characteristics: [ECharacteristics.TIME, ECharacteristics.SPEED]
 	},
 	{
