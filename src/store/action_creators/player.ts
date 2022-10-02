@@ -11,6 +11,18 @@ import { EAttributes, EPlayerActionTypes, INFT, TPlayerActions } from '../../typ
 
 export const setNewFit = (payload: INFT) => {
 	return async (dispatch: Dispatch<TPlayerActions>) => {
+		// if ( payload.type === EAttributes.CARDIGAN ) {
+		// 	dispatch({
+		// 		type: EPlayerActionTypes.REMOVE_FIT,
+		// 		payload: EAttributes.T_SHIRT
+		// 	})
+		// }
+		// if ( payload.type === EAttributes.T_SHIRT ) {
+		// 	dispatch({
+		// 		type: EPlayerActionTypes.REMOVE_FIT,
+		// 		payload: EAttributes.CARDIGAN
+		// 	})
+		// }
 		dispatch({
 			type: EPlayerActionTypes.SET_NEW_FIT,
 			payload

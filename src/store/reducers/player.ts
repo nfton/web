@@ -86,7 +86,11 @@ export const playerReducer = (state = playerInitialState, action: TPlayerActions
 		case EPlayerActionTypes.SET_LEVEL:
 			return {...state, [EPlayerStateTypes.LEVEL]: action.payload}
 		case EPlayerActionTypes.SET_NEW_FIT:
-			return {...state, [EPlayerStateTypes.CURRENT_FIT]: { ...state[EPlayerStateTypes.CURRENT_FIT], [action.payload.type]: action.payload }}
+			let currentFit = state[EPlayerStateTypes.CURRENT_FIT]
+			if ( action.payload.type === EAttributes.CARDIGAN ) currentFit = { ...currentFit, [EAttributes.T_SHIRT]: undefined }
+			if ( action.payload.type === EAttributes.T_SHIRT ) currentFit = { ...currentFit, [EAttributes.CARDIGAN]: undefined }
+			currentFit = { ...currentFit, [action.payload.type]: action.payload }
+			return { ...state, [EPlayerStateTypes.CURRENT_FIT]: currentFit }
 		case EPlayerActionTypes.REMOVE_FIT:
 			return {...state, [EPlayerStateTypes.CURRENT_FIT]: { ...state[EPlayerStateTypes.CURRENT_FIT], [action.payload]: undefined }}
 		default:
