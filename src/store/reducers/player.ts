@@ -122,18 +122,7 @@ export const playerInitialState: IPlayerState = {
 			},
 			price: 10
 		},
-		[EAttributes.CARDIGAN]: {
-			type: EAttributes.CARDIGAN,
-			name: 'white cardigan',
-			image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/9/image.png',
-			characteristics: {
-				[ECharacteristics.HEALTH]: 1,
-				[ECharacteristics.SPEED]: 2,
-				[ECharacteristics.STRENGTH]: 0,
-				[ECharacteristics.TIME]: 0,
-			},
-			price: 10
-		},
+		[EAttributes.CARDIGAN]: undefined,
 		[EAttributes.PANTS]: {
 			type: EAttributes.PANTS,
 			name: 'green pants',
@@ -146,7 +135,18 @@ export const playerInitialState: IPlayerState = {
 			},
 			price: 10
 		},
-		[EAttributes.T_SHIRT]: undefined,
+		[EAttributes.T_SHIRT]: {
+			type: EAttributes.T_SHIRT,
+			name: 'pink T-shirt',
+			image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png',
+			characteristics: {
+				[ECharacteristics.HEALTH]: 2,
+				[ECharacteristics.SPEED]: 2,
+				[ECharacteristics.STRENGTH]: 0,
+				[ECharacteristics.TIME]: 0,
+			},
+			price: 10
+		}
 	}
 }
 
