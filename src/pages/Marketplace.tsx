@@ -48,7 +48,7 @@ const MarketplacePage: React.FC = memo(() => {
                     { Object.values(EAttributes).map((value) =>
                             <div>
                                 { checkroom[value as EAttributes]?.length &&
-                                    <Typography className="value" sx={{color: theme.palette.background.paper === '#1C1C1C' ? "white" : "black"}}>{value === 'tShirt' ? "T-shirt" : value.charAt(0).toUpperCase() + value.slice(1)}</Typography>}
+                                    <Typography className="value" sx={{color: "white"}}>{value === 'tShirt' ? "T-shirt" : value.charAt(0).toUpperCase() + value.slice(1)}</Typography>}
                                 <div className="cards">
                                     { checkroom[value as EAttributes]?.map((item) =>
                                             <NFTCard
