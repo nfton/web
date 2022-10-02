@@ -14,21 +14,25 @@ import woodcutter from '../images/games/woodcutter.png'
 
 export const CHARACTERISTICS = {
 	[ECharacteristics.HEALTH]: {
+		key: ECharacteristics.HEALTH,
 		color: '#F44336',
 		icon: <FavoriteIcon color='inherit' style={{color: '#F44336'}}/>,
 		title: "Health"
 	},
 	[ECharacteristics.TIME]: {
+		key: ECharacteristics.TIME,
 		color: '#4CAF50',
 		icon: <TimerIcon color='inherit' style={{color: '#4CAF50'}}/>,
 		title: "Time",
 	},
 	[ECharacteristics.SPEED]: {
+		key: ECharacteristics.SPEED,
 		color: '#3F51B5',
 		icon: <SpeedIcon color='inherit' style={{color: '#3F51B5'}}/>,
 		title: "Speed",
 	},
 	[ECharacteristics.STRENGTH]: {
+		key: ECharacteristics.STRENGTH,
 		color: '#ce8f00',
 		icon: <FitnessCenterIcon color='inherit' style={{color: '#ce8f00'}}/>,
 		title: "Strength",

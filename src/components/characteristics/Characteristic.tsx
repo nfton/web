@@ -5,13 +5,11 @@ import { CHARACTERISTICS } from '../../data'
 
 interface CharacteristicProps {
 	char: typeof CHARACTERISTICS[keyof typeof CHARACTERISTICS],
-	playerLevel: number,
 	charsValue: number
 }
 
 export const Characteristic: React.FC<CharacteristicProps> = memo(({
 	char,
-	playerLevel,
 	charsValue
 }: CharacteristicProps) => {
 	return (
@@ -24,7 +22,7 @@ export const Characteristic: React.FC<CharacteristicProps> = memo(({
 					<Typography variant="caption" display="block" gutterBottom>
 						{ char.title }
 					</Typography>
-					<h4>{ playerLevel + charsValue }</h4>
+					<h4>{ charsValue }</h4>
 				</Box>
 			</div>
 		</div>
