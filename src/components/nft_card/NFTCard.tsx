@@ -16,6 +16,7 @@ const NFTCard: React.FC<INFTCard> = memo((props: INFTCard) => {
 			image={props.image}
 			alt={props.type}
 		/>
+		<div className="nft-card-name"><strong>{props.name}</strong></div>
 		<CardActions className="nft-card-actions">
 			{Object.keys(props.characteristics).filter((el: string) => props.characteristics[el as ECharacteristics] > 0).map(el =>
 				<Chip label={props.characteristics[el as ECharacteristics]} icon={CHARACTERISTICS[el as ECharacteristics].icon}
