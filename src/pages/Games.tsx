@@ -62,7 +62,7 @@ const GamesPage: React.FC = memo(() => {
 	}
 	return (
 		<div className="games-container">
-			<span className="page-heading" style={{color: theme.palette.text.primary}}>Games</span>
+			<span className="page-heading" style={{color: theme.palette.background.paper === '#1C1C1C' ? theme.palette.text.primary : "#1C1C1C" }}>Games</span>
 			<section className="section">
 				<span className="section-heading" style={{color: theme.palette.text.secondary}}>Multiplayer</span>
 				<div className="games-cards games-cards__multiplayer">

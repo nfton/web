@@ -10,22 +10,10 @@ import {useTypedSelector, useWindowDimensions} from "../hooks";
 import SearchIcon from '@mui/icons-material/Search';
 
 const MarketplacePage: React.FC = memo(() => {
-    const {height} = useWindowDimensions()
-
-    const divStyle: CSSProperties = {
-        height: height +  'px',
-        backgroundColor: theme.palette.primary.dark
-    }
-
     const { checkroom } = useTypedSelector(state => state.player)
-
     return (
         <div
-            style={divStyle}
              className="marketplace-container">
-            <div className="pattern" style={{color: theme.palette.primary.light}}>
-                {pattern0}
-            </div>
             <div className="search">
                 <TextField
                     className="searchInput"
@@ -47,8 +35,8 @@ const MarketplacePage: React.FC = memo(() => {
             <div className="all">
                     { Object.values(EAttributes).map((value) =>
                             <div>
-                                { checkroom[value as EAttributes]?.length &&
-                                    <Typography className="value" sx={{color: "white"}}>{value === 'tShirt' ? "T-shirt" : value.charAt(0).toUpperCase() + value.slice(1)}</Typography>}
+                                { checkroom[value as EAttributes]?.length! > 0 &&
+                                    <Typography className="value" sx={{color: theme.palette.background.paper === '#1C1C1C' ? theme.palette.text.primary : "#1C1C1C" }}>{value === 'tShirt' ? "T-shirt" : value.charAt(0).toUpperCase() + value.slice(1)}</Typography>}
                                 <div className="cards">
                                     { checkroom[value as EAttributes]?.map((item) =>
                                             <NFTCard
