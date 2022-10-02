@@ -62,5 +62,12 @@
   padding: 0 10px 10px;
   justify-content: space-around;
 }
+.game-card-modal .modal-button-container {
+  display: flex;
+  justify-content: center;
+}
+.game-card-modal .modal-button-container button {
+  margin: 10px 0 20px;
+}
 
 /*# sourceMappingURL=game_card.css.map */

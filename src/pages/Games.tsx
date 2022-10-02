@@ -1,20 +1,18 @@
-import './games.scss'
+import React, {memo, useState} from 'react'
 import {theme} from '../themes'
 import {getApp} from "firebase/app"
 import {LoadingButton} from '@mui/lab';
 import {GameCard} from '../components'
 import {useTypedSelector} from "../hooks";
-import {getId} from '../store/action_creators'
 import {CHARACTERISTICS, GAMES} from '../data'
 import DoneIcon from "@mui/icons-material/Done";
 import {ECharacteristics, IGame} from "../types";
 import CloseIcon from "@mui/icons-material/Close";
-import React, {memo, useEffect, useState} from 'react'
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import {Button, Chip, Modal, Paper} from "@mui/material";
 import {getFunctions, httpsCallable} from 'firebase/functions';
 import {collection, getFirestore, onSnapshot} from "firebase/firestore"
-import {calcChars} from "../utils";
+import {getId, calcChars} from "../utils";
 
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
