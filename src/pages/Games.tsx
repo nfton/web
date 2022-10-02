@@ -37,7 +37,8 @@ const GamesPage: React.FC = memo(() => {
 				console.log(e.data())
 				if (e.get("type") === game?.id) {
 					setJoining(2);
-					navigate('https://nfton.space/colors/?game=' + e.get('id').toString())
+					// @ts-ignore
+					window.Telegram.WebApp.openLink('https://nfton.space/colors/?game=' + e.get('id').toString())
 				}
 			})
 		})
