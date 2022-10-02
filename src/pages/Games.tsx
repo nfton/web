@@ -6,10 +6,9 @@ import {GameCard} from '../components'
 import {useTypedSelector} from "../hooks";
 import {getId} from '../store/action_creators'
 import {CHARACTERISTICS, GAMES} from '../data'
-import DoneIcon from "@mui/icons-material/Done";
 import {ECharacteristics, IGame} from "../types";
 import CloseIcon from "@mui/icons-material/Close";
-import React, {memo, useEffect, useState} from 'react'
+import React, {memo, useState} from 'react'
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import {Button, Chip, Modal, Paper} from "@mui/material";
 import {getFunctions, httpsCallable} from 'firebase/functions';
