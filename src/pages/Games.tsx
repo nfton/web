@@ -38,7 +38,13 @@ const GamesPage: React.FC = memo(() => {
 				if (e.get("type") === game?.id) {
 					setJoining(2);
 					// @ts-ignore
-					window.Telegram.WebApp.openLink('https://nfton.space/colors/?game=' + e.get('id').toString())
+					httpsCallable(getFunctions(getApp(), "europe-weest3"), "sendGame")({
+						url: 'https://nfton.space/colors/?game=' + e.get('id').toString(),
+						id: getId()
+					}).then(() => {
+						// @ts-ignore
+						window.Telegram.WebApp.close()
+					})
 				}
 			})
 		})
