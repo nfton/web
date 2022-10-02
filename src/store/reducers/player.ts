@@ -17,12 +17,6 @@ import {
 
 export const playerInitialState: IPlayerState = {
 	[EPlayerStateTypes.LEVEL]: 1,
-	[EPlayerStateTypes.ADDITIONAL]: {
-		[ECharacteristics.HEALTH]: 1,
-		[ECharacteristics.SPEED]: 3,
-		[ECharacteristics.STRENGTH]: 2,
-		[ECharacteristics.TIME]: 7,
-	},
 	[EPlayerStateTypes.CHECKROOM]: {
 		[EAttributes.COLLAR]: [],
 		[EAttributes.CARDIGAN]: [],
@@ -31,7 +25,7 @@ export const playerInitialState: IPlayerState = {
 			{
 				type: EAttributes.T_SHIRT,
 				name: 'Pink T-shirt',
-				image: '',
+				image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png',
 				characteristics: {
 					[ECharacteristics.HEALTH]: 1,
 					[ECharacteristics.SPEED]: 2,
@@ -48,8 +42,8 @@ export const playerInitialState: IPlayerState = {
 		[EAttributes.PANTS]: undefined,
 		[EAttributes.T_SHIRT]: {
 			type: EAttributes.T_SHIRT,
-			name: 'Pink T-shirt',
-			image: '',
+			name: 'ping t-shirt',
+			image: 'https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png',
 			characteristics: {
 				[ECharacteristics.HEALTH]: 1,
 				[ECharacteristics.SPEED]: 2,

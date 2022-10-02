@@ -14,11 +14,12 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import {Button, Chip, Modal, Paper} from "@mui/material";
 import {getFunctions, httpsCallable} from 'firebase/functions';
 import {collection, getFirestore, onSnapshot} from "firebase/firestore"
+import {calcChars} from "../utils";
 
 const GamesPage: React.FC = memo(() => {
 	const [modal, setModal] = useState(false)
 	const [game, setGame] = useState<IGame | null>(null)
-	const {level, additional} = useTypedSelector(state => state.player)
+	const {level, currentFit} = useTypedSelector(state => state.player)
 	const [joining, setJoining] = useState(0)
 	const openModal = (id: string) => {
 		setModal(true)
@@ -80,7 +81,7 @@ const GamesPage: React.FC = memo(() => {
 							<div className="modal-characteristics">
 								{game.characteristics.map(e =>
 									<Chip key={e.toString()} icon={CHARACTERISTICS[e as ECharacteristics].icon} variant="outlined"
-									      label={(level + additional[e as ECharacteristics])}
+									      label={(level + calcChars(currentFit, level)[e as ECharacteristics])}
 									      style={{borderColor: CHARACTERISTICS[e as ECharacteristics].color}}/>)}
 							</div>
 							<div className="modal-button-container">
