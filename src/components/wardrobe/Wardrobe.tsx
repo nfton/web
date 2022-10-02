@@ -30,14 +30,15 @@ export const Wardrobe: React.FC = memo(() => {
 				indicatorColor="secondary"
 				aria-label="tabs"
 			>
-				<Tab value="cardigan" label={EAttributes.CARDIGAN}/>
-				<Tab value="collar" label={EAttributes.COLLAR}/>
-				<Tab value="pants" label={EAttributes.PANTS}/>
-				<Tab value="t-shirt" label={EAttributes.T_SHIRT}/>
+				<Tab key="cardigan" value="cardigan" label={EAttributes.CARDIGAN}/>
+				<Tab key="collar" value="collar" label={EAttributes.COLLAR}/>
+				<Tab key="pants" value="pants" label={EAttributes.PANTS}/>
+				<Tab key="t-shirt" value="t-shirt" label={EAttributes.T_SHIRT}/>
 			</Tabs>
 		</Box>
 		<div className="cards">
-			<NFTCard type={EAttributes.CARDIGAN} name='pink t-shirt' image={"https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png"}
+			<NFTCard type={EAttributes.CARDIGAN} name='pink t-shirt'
+			         image={"https://s.getgems.io/nft/c/633846f13730a2edb21981a6/2/image.png"}
 			         characteristics={{
 				         [ECharacteristics.HEALTH]: 5,
 				         [ECharacteristics.SPEED]: 2,

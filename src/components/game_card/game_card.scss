@@ -33,6 +33,7 @@
         justify-content: center;
         width: 20px;
         height: 20px;
+        margin-left: 5px;
 
         *:not(:last-child) {
           margin-right: 8px;
@@ -44,4 +45,37 @@
       font-weight: 700;
     }
   }
+
+}
+
+.game-card-modal {
+  h2, h3 {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .modal-paper {
+    margin: 50px 30px;
+    padding: 1px;
+  }
+
+  .modal-image {
+    width: 100%;
+
+  }
+
+  .close-button {
+    position: absolute;
+    top: 62px;
+    right: 40px;
+  }
+
+  .modal-characteristics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 10px 10px;
+    justify-content: space-around;
+  }
+
 }

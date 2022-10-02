@@ -7,7 +7,8 @@ import {theme} from "../../themes";
 import LocalAtmIcon from '@mui/icons-material/LocalAtm'
 
 const NFTCard: React.FC<INFTCard> = memo((props: INFTCard) => {
-	return <Card variant="outlined" className="nft-card" style={{backgroundColor: theme.palette.background.default}}>
+	return <Card variant="outlined" key={props.image} className="nft-card"
+	             style={{backgroundColor: theme.palette.background.default}}>
 		<CardMedia
 			style={{objectFit: 'cover'}}
 			component="img"

@@ -30,8 +30,8 @@ export const CHARACTERISTICS = {
 		title: "Speed",
 	},
 	[ECharacteristics.STRENGTH]: {
-		color: '#FFC107',
-		icon: <FitnessCenterIcon color='inherit' style={{color: '#FFC107'}}/>,
+		color: '#ce8f00',
+		icon: <FitnessCenterIcon color='inherit' style={{color: '#ce8f00'}}/>,
 		title: "Strength",
 	}
 }
