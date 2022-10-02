@@ -4,6 +4,8 @@
   border-radius: 15px !important;
   height: auto;
   width: 120px;
+  min-width: 120px;
+  margin: 0.5rem;
 }
 .nft-card .nft-card-status {
   position: absolute;
