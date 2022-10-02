@@ -1,26 +1,33 @@
 import React, {memo} from "react";
-import {Typography} from "@mui/material";
+import {Box, LinearProgress, Typography} from "@mui/material";
 import './characteristics.scss'
+import {CHARACTERISTICS} from "../../data";
+import {ECharacteristics} from "../../types";
 
 interface CharacteristicProps {
-    char: any;
-    charNumber: number;
+	char: typeof CHARACTERISTICS[ECharacteristics.TIME];
+	charValue: number;
+	additionalValue: number
 }
 
-export const Characteristic: React.FC<CharacteristicProps> = memo(({char, charNumber}) => {
-    return (
-        <div className="characteristic-container">
-            <div className="characteristic">
-            <div style={ { color: char.color } }
-                 className="char"
-                 key={ char.title }
-            >
-                { char.icon}
-            </div>
-            <Typography className="charNumber" variant="h6" component="div">
-                {charNumber}
-            </Typography>
-            </div>
-        </div>
-    )
+export const Characteristic: React.FC<CharacteristicProps> = memo(({
+	                                                                   char,
+	                                                                   charValue,
+	                                                                   additionalValue
+                                                                   }: CharacteristicProps) => {
+	return (
+		<div className="characteristic-container">
+			<div className="characteristic">
+				<div style={{color: char.color}} className="char" key={char.title}>
+					{char.icon}
+				</div>
+				<Box sx={{width: '100%'}}>
+					<Typography variant="caption" display="block" gutterBottom>
+						{char.title}
+					</Typography>
+					<h5>{charValue + additionalValue}</h5>
+				</Box>
+			</div>
+		</div>
+	)
 })

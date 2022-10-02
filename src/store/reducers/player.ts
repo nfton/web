@@ -11,10 +11,10 @@ import {ECharacteristics, EPlayerActionTypes, EPlayerStateTypes, IPlayerState, T
 export const playerInitialState: IPlayerState = {
 	[EPlayerStateTypes.LEVEL]: 1,
 	[EPlayerStateTypes.ADDITIONAL]: {
-		[ECharacteristics.HEALTH]: 0,
-		[ECharacteristics.SPEED]: 0,
-		[ECharacteristics.STRENGTH]: 0,
-		[ECharacteristics.TIME]: 0,
+		[ECharacteristics.HEALTH]: 1,
+		[ECharacteristics.SPEED]: 3,
+		[ECharacteristics.STRENGTH]: 2,
+		[ECharacteristics.TIME]: 7,
 	}
 
 }
