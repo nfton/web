@@ -6,4 +6,5 @@ You can try our TWA there: [bot](https://t.me/NFTONspaceBOT)
 
 > type `/start` and then click `Launch Game`
 
+Backend of the application: [github.com](github.com/nfton/firebase)
 
